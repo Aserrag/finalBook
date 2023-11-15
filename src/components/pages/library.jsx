@@ -2,16 +2,14 @@ import React from 'react'
 import Header from '../items/header'
 
 import SearchBar from '../items/searchBar'
-import BookList from '../BookList';
+import BookList from './../items/BookList';
 
 const Library = () => {
   return (
     <div>
       <Header/>
       <SearchBar/>
-      
-
-    <div>Library</div>
+      <br></br>
     <BookList />
     </div>
   )

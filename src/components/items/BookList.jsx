@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './card'; // Assuming Card.js is in the same folder
-import { BookDirectory } from '../data/book'; 
+import { BookDirectory } from '../data/book';
  // Assuming books.js is in the data folder
 
 const BookList = () => {
