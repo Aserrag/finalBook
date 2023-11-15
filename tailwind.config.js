@@ -58,6 +58,8 @@ module.exports = {
         card: "rgba(256,256,256,0.8)",
         cartBg: "#282a2c",
         cartItem: "#2e3033",
+        items: "#CD5C08",
+        bgBasic: "#385963",
         cartTotal: "#343739",
         loaderOverlay: "rgba(256,256,256,0.1)",
       },

@@ -10,8 +10,8 @@ const SearchBar = () => {
 //   };
 
   return (
-    <div className=" gap-24  bg-indigo-900 flex items-center justify-center place-items-center ">
-      <div className="p-4 md:w-2/3 bg-indigo-500 shadow-xl mt-12 rounded-md flex items-center justify-center">
+    <div className=" gap-24   flex items-center justify-center place-items-center ">
+      <div className="p-4 md:w-2/3 bg-items shadow-xl mt-12 rounded-md flex items-center justify-center">
         {/* <IoSearch className="text-2xl text-textColor" /> */}
         <input
           type="text"

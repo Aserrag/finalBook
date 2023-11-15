@@ -6,10 +6,11 @@ import './App.css';
 
 function App() {
   return (
-    <div >
+    <div className="w-full h-full flex flex-col bg-bgBasic  justify-center text-center" >
       <header >
         <BrowserRouter>
         <Routes>
+          
           <Route path="/login" element={<Login />} />
           <Route path="/*" element={<Home />} />
           <Route path="/library" element={<Library />} />
