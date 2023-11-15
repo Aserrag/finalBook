@@ -20,14 +20,14 @@ function App() {
           </Routes>
         </BrowserRouter>
       </header>
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 50 }}
         className={`fixed min-w-[700px] h-26  inset-x-0 bottom-0  bg-gray-700 drop-shadow-2xl backdrop-blur-md flex flex-wrap justify-center items-center`}
       >
         <MediaPlayer />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }
