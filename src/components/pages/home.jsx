@@ -1,15 +1,17 @@
 import React from 'react'
 import Header from '../items/header'
 import SearchBar from '../items/searchBar'
+import MediaPlayer from '../items/mediaPlayer'
 
 const Home = () => {
   return (
-    <div className="w-full h-full flex flex-col justify-center text-center" >
+    <div  >
       <Header/>
       <SearchBar/>
     <div>
       Home
       </div>
+      
       </div>
   )
 }
