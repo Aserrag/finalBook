@@ -2,17 +2,22 @@ import React from 'react'
 import Header from '../items/header'
 import SearchBar from '../items/searchBar'
 import MediaPlayer from '../items/mediaPlayer'
+import BookList from '../items/BookList';
 
 const Home = () => {
   return (
-    <div  >
+    <>
+    <div className="bg-bgBasic" >
+
+      
       <Header/>
       <SearchBar/>
-    <div>
-      Home
       </div>
-      
+      <div className='bg-Hcolor'>
+
+      <BookList />
       </div>
+      </>  
   )
 }
 

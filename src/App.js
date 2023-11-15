@@ -8,8 +8,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function App() {
   return (
-    <div className="h-auto flex items-center justify-center min-w-[680px]" >
-      <header className="w-full h-full flex flex-col bg-bgBasic  justify-center text-center">
+    <div className="h-auto flex items-center  justify-center min-w-[680px]" >
+      <header className="w-full h-full flex flex-col   justify-center text-center">
         <BrowserRouter>
           <Routes>
 

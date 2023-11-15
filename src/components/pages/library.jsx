@@ -9,8 +9,8 @@ const Library = () => {
     <div>
       <Header/>
       <SearchBar/>
-      <br></br>
-    <BookList />
+      <BookList />
+   
     </div>
   )
 }

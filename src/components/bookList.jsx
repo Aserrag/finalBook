@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from './card'; // Assuming Card.js is in the same folder
-import { BookDirectory } from '../data/book';
+import { BookDirectory } from '../data/book'; 
  // Assuming books.js is in the data folder
 
 const BookList = () => {
@@ -8,9 +8,9 @@ const BookList = () => {
   const { listOfBooks } = bookDirectory;
 
   return (
-    <div className="flex flex-wrap justify-center lg:justify-start">
+    <div className="flex flex-wrap justify-center ">
       {bookDirectory.listOfBooks.map((book, index) => (
-        <Card key={index} book={book} className="m-2 lg:m-4"  />
+        <Card key={index} book={book} />
       ))}
     </div>
   );
