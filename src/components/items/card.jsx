@@ -22,7 +22,7 @@ const Card = () => {
         </a>
     </div>
 </div>
-
+{/* hello serag */}
     </div>
   )
 }
