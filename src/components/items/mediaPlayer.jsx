@@ -1,4 +1,6 @@
-import React from 'react'
+//musicPlayer.jsx
+
+import React, { useEffect, useState } from 'react'
 import { motion } from "framer-motion";
 import AudioPlayer from "react-h5-audio-player";
 import { IoMdClose } from "react-icons/io";
@@ -15,30 +17,62 @@ import { actionType } from "../../Context/reducer";
 
 const MediaPlayer = ({ book }) => {
 
-  // const {
-  //   poster,
-  //   title,
-  //   summary,
-  //   isRecommended,
-  //   chapters,
-  // } = book;
+
   const [{  isAudiobookPlaying}, dispatch] = useStateValue();
+  const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
+
+
+  // Destructure book properties
+  const { title, author, rate, poster, bookCover , audioUrl } = book;
+
+  const onClickNext = () => {
+    dispatch({ type: 'NEXT_AUDIOBOOK' });
+  };
+
+  useEffect(() => {
+    console.log('Component mounted with book prop:', book);
+    return () => {
+      console.log('Component unmounted');
+    };
+  }, [book]);
+
+  useEffect(() => {
+    if (!book || typeof book !== 'object') {
+      return;
+    }
+
+    // Update the currently playing state
+    setCurrentlyPlaying(book);
+
+    // Assuming you have a function to dispatch the audiobook playing action
+    dispatch({ type: 'SET_AUDIOBOOK_PLAYING', isAudiobookPlaying: true, bookData: book });
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [book]);
 
   const closeMusicPlayer = () => {
     if (isAudiobookPlaying) {
       dispatch({
-        type: actionType.SET_AUDIOBOOK_PLAYING,
+        type: 'SET_AUDIOBOOK_PLAYING',
         isAudiobookPlaying: false,
       });
+      setCurrentlyPlaying(null);
     }
   };
-
+  if (!book || typeof book !== 'object') {
+    return (
+      <div>
+        <p>No book data available</p>
+        {/* You can customize the message or render a different UI for this case */}
+      </div>
+    );
+  }
 
   return (
     <div className="w-full flex items-center gap-3 overflow-hidden ">
     <div className={`w-full full items-center gap-3 p-4 flex relative`}>
       <img
-        src={Logo}
+        src={book.poster}
         className="w-40 h-20 object-cover rounded-lg"
         alt=""
       />
@@ -48,13 +82,13 @@ const MediaPlayer = ({ book }) => {
             allAudiobooks[audiobook]?.name.length > 20
               ? allAudiobooks[audiobook]?.name.slice(0, 20)
               : allAudiobooks[audiobook]?.name
-          }`}{" "} */}SONGGGGG
-          <span className="text-base">ONGGGGGGGG</span>
+          }`}{" "} */}{book.title}
+          <span className="text-base"></span>
         </p>
         <p className="text-textColor">
-          {/* {allAudiobooks[audiobook]?.author}{" "} */}hhhh
+          {/* {allAudiobooks[audiobook]?.author}{" "} */}{book.author}
           <span className="text-sm text-textColor font-semibold">
-            {/* ({allAudiobooks[audiobook]?.genre}) */}sasas
+            
           </span>
         </p>
         <motion.i
@@ -65,19 +99,23 @@ const MediaPlayer = ({ book }) => {
         </motion.i>
       </div>
       <div className="flex-1 ">
+      {currentlyPlaying && currentlyPlaying === book && (
         <AudioPlayer
-          // src={allAudiobooks[audiobook]?.audiobookUrl}
-          onPlay={() => console.log("is playing")}
-          autoPlay={true}
+           src={book.audioUrl}
+          onPlay={() => console.log("Audio is playing") }
+          onPause={() => dispatch({ isAudiobookPlaying: false }) }
+          onClickNext={() => dispatch({ isAudiobookPlaying: false }) }
+          autoPlay={false}
           showSkipControls={true}
  
         />
+        )}
       </div>
       <div className="h-full flex items-center justify-center flex-col gap-3">
         <motion.i whileTap={{ scale: 0.8 }}  onClick={closeMusicPlayer} >
           <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
         </motion.i>
-        <motion.i whileTap={{ scale: 0.8 }}>
+        <motion.i whileTap={{ scale: 0.8 }} onClick={onClickNext}>
           <IoArrowRedo className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
         </motion.i>
       </div>

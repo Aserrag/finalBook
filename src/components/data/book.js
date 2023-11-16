@@ -46,7 +46,7 @@ class BookDirectory {
         summary:
 
           "Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets",
-        audioUrl: "",
+        audioUrl: "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Sword%20of%20Destiny/01.mp3?_=1",
         isRecommended: true,
         chapters: [
           new Chapters({
@@ -145,7 +145,7 @@ class BookDirectory {
     summary:
       "The world has fallen into war. Ciri, the child of prophecy, has vanished. Hunted by friends and foes alike, she has taken on the guise of a petty bandit and lives free for the first time in her life. But the net around her is closing. Geralt, the Witcher, has assembled a group of allies determined to rescue her. Both sides of the war have sent brutal mercenaries to hunt her down. Her crimes have made her famous.",
     audioUrl:
-      "https://ipaudio.club/wp-content/uploads/APP/Tower%20of%20Swallows/01.mp3",
+      "https://files.audiobookss.com/audio/free-full-audiobook-the-time-of-contempt-the-witcher-book-2-by-andrzej-sapkowski/1072566310/Time%20of%20Contempt%20The%20Witcher,%20Book%202%20(Unabridged)%20-%20001-840874795.mp3",
     isRecommended: true,
     chapters: [
       new Chapters({
@@ -198,7 +198,7 @@ class BookDirectory {
     tags: ["Fantasy", "Drama", "Fiction"],
     summary:
       "Harry Potter thinks he is an ordinary boy - until he is rescued by an owl, taken to Hogwarts School of Witchcraft and Wizardry, learns to play Quidditch and does battle in a deadly duel. The Reason ... HARRY POTTER IS A WIZARD!",
-    audioUrl: "",
+    audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-1.mp3",
     isRecommended: false,
     chapters: [
       new Chapters({
@@ -227,7 +227,7 @@ class BookDirectory {
     tags: ["Fantasy", "Drama", "Fiction"],
     summary:
       "Ever since Harry Potter had come home for the summer, the Dursleys had been so mean and hideous that all Harry wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he’s packing his bags, Harry receives a warning from a strange impish creature who says that if Harry returns to Hogwarts, disaster will strike.",
-    audioUrl: "",
+    audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-7.mp3",
     isRecommended: false,
     chapters: [
       new Chapters({
@@ -255,7 +255,7 @@ class BookDirectory {
     rate: 5,
     tags: ["Fantasy", "Drama", "Fiction"],
     summary:"Harry Potter, along with his best friends, Ron and Hermione, is about to start his third year at Hogwarts School of Witchcraft and Wizardry. Harry can't wait to get back to school after the summer holidays. (Who wouldn't if they lived with the horrible Dursleys?) But when Harry gets to Hogwarts, the atmosphere is tense. There's an escaped mass murderer on the loose, and the sinister prison guards of Azkaban have been called in to guard the school...",
-    audioUrl: "",
+    audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-1.mp3",
     isRecommended: false,
     chapters: [
       new Chapters({

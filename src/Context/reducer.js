@@ -12,6 +12,8 @@ export const actionType = {
     SET_AUDIOBOOK: "SET_AUDIOBOOK",
     SET_AUDIOBOOK_PLAYING: "SET_AUDIOBOOK_PLAYING",
     SET_MINI_PLAYER: "SET_MINI_PLAYER",
+    isAudiobookPlaying: false,
+    currentBook: null,
 }
 
 const reducer = (state, action) => {
@@ -96,6 +98,24 @@ const reducer = (state, action) => {
                 miniPlayer: action.miniPlayer,
             };
 
+            case 'SET_AUDIOBOOK_PLAYING':
+            return {
+        ...state,
+        isAudiobookPlaying: action.isAudiobookPlaying,
+        currentBook: action.bookData,
+      };
+      case 'NEXT_AUDIOBOOK':
+        // Implement logic to get the next book based on your data structure
+        // For example, you might have an array of books and an index to keep track
+        // of the current book, and increment the index to get the next one.
+        const nextIndex = (state.currentBookIndex || 0) + 1;
+        const nextBook = state.allBooks[nextIndex];
+  
+        return {
+          ...state,
+          currentBook: nextBook,
+          currentBookIndex: nextIndex,
+        };
         default:
             return state;
     };

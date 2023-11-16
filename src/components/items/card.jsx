@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { useStateValue } from "../../Context/StateProvider";
 import { actionType } from "../../Context/reducer";
-
+import MediaPlayer from './mediaPlayer';
+import { motion } from 'framer-motion';
 
 
 
@@ -17,18 +18,23 @@ const Card = ({ book }) => {
 
   const [{  isAudiobookPlaying}, dispatch] = useStateValue();
 
+  const [currentlyPlayingBook, setCurrentlyPlayingBook] = useState(null);
+
   const startPlayer = () => {
-
-   
-
-    if (!isAudiobookPlaying) {
+    if (!isAudiobookPlaying || currentlyPlayingBook !== book) {
       dispatch({
         type: actionType.SET_AUDIOBOOK_PLAYING,
         isAudiobookPlaying: true,
+        bookData: book,
       });
+      setCurrentlyPlayingBook(book);
     }
-  }
-
+  };
+  useEffect(() => {
+    if (!isAudiobookPlaying) {
+      setCurrentlyPlayingBook(null);
+    }
+  }, [isAudiobookPlaying]);
 
   
   
@@ -48,7 +54,19 @@ const Card = ({ book }) => {
           <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             {isRecommended ? 'Recommended' : 'Read more'}
           </button>
-          <button className=' items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' onClick={startPlayer}>Listen</button>
+          <button className=' items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800'
+           onClick={startPlayer}>
+            Listen</button>
+            {isAudiobookPlaying && currentlyPlayingBook && (
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            className={`fixed min-w-[100px] h-26 inset-x-10 bottom-0 bg-white drop-shadow-2xl backdrop-blur-md rounded-lg`}
+          >
+            <MediaPlayer book={currentlyPlayingBook} />
+          </motion.div>
+        )} {/* Render MediaPlayer only when isAudiobookPlaying is true */}
           {chapters && chapters.length > 0 && (
             <div className="mt-4">
               {/* Add the chapters section if needed */}
@@ -56,6 +74,7 @@ const Card = ({ book }) => {
           )}
         </div>
       </div>
+      
     </div>
   );
   
