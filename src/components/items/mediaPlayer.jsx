@@ -5,16 +5,41 @@ import { IoMdClose } from "react-icons/io";
 import { IoArrowRedo, IoArrowUndo, IoMusicalNote } from "react-icons/io5";
 import { RiPlayListFill } from "react-icons/ri";
 import { Logo } from '../../assets/img';
+import "react-h5-audio-player/lib/styles.css";
+import { useStateValue } from "../../Context/StateProvider";
+import { actionType } from "../../Context/reducer";
 
-const MediaPlayer = () => {
+
+
+
+
+const MediaPlayer = ({ book }) => {
+
+  // const {
+  //   poster,
+  //   title,
+  //   summary,
+  //   isRecommended,
+  //   chapters,
+  // } = book;
+  const [{  isAudiobookPlaying}, dispatch] = useStateValue();
+
+  const closeMusicPlayer = () => {
+    if (isAudiobookPlaying) {
+      dispatch({
+        type: actionType.SET_AUDIOBOOK_PLAYING,
+        isAudiobookPlaying: false,
+      });
+    }
+  };
+
+
   return (
-    <div className="w-full full flex items-center gap-3 overflow-hidden ">
-    <div
-      className={`w-full full items-center gap-3 p-4 `}
-    >
+    <div className="w-full flex items-center gap-3 overflow-hidden ">
+    <div className={`w-full full items-center gap-3 p-4 flex relative`}>
       <img
         src={Logo}
-        className="w-20 h-20 object-cover rounded-md"
+        className="w-40 h-20 object-cover rounded-lg"
         alt=""
       />
       <div className="flex items-start flex-col">
@@ -39,17 +64,17 @@ const MediaPlayer = () => {
           <RiPlayListFill className="text-textColor hover:text-headingColor text-3xl cursor-pointer" />
         </motion.i>
       </div>
-      <div className="flex-1">
+      <div className="flex-1 ">
         <AudioPlayer
           // src={allAudiobooks[audiobook]?.audiobookUrl}
           onPlay={() => console.log("is playing")}
           autoPlay={true}
           showSkipControls={true}
-          
+ 
         />
       </div>
       <div className="h-full flex items-center justify-center flex-col gap-3">
-        <motion.i whileTap={{ scale: 0.8 }} >
+        <motion.i whileTap={{ scale: 0.8 }}  onClick={closeMusicPlayer} >
           <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
         </motion.i>
         <motion.i whileTap={{ scale: 0.8 }}>

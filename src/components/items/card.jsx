@@ -1,4 +1,10 @@
 import React from 'react';
+import { useStateValue } from "../../Context/StateProvider";
+import { actionType } from "../../Context/reducer";
+
+
+
+
 
 const Card = ({ book }) => {
   const {
@@ -9,6 +15,22 @@ const Card = ({ book }) => {
     chapters,
   } = book;
 
+  const [{  isAudiobookPlaying}, dispatch] = useStateValue();
+
+  const startPlayer = () => {
+
+   
+
+    if (!isAudiobookPlaying) {
+      dispatch({
+        type: actionType.SET_AUDIOBOOK_PLAYING,
+        isAudiobookPlaying: true,
+      });
+    }
+  }
+
+
+  
   
   return (
     <div className="max-w-xs w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 mx-auto mb-8">
@@ -23,9 +45,10 @@ const Card = ({ book }) => {
           <p className="mb-4 text-sm text-gray-700 dark:text-gray-400">
             {`${summary.length > 20 ? summary.slice(0, 200) : summary}`}{"...."}
           </p>
-          <a className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          <button className="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
             {isRecommended ? 'Recommended' : 'Read more'}
-          </a>
+          </button>
+          <button className=' items-center px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800' onClick={startPlayer}>Listen</button>
           {chapters && chapters.length > 0 && (
             <div className="mt-4">
               {/* Add the chapters section if needed */}
