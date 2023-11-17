@@ -29,13 +29,14 @@ const Home = () => {
         <img
           src="/assets/image/SocialGraphicTop10.png" 
           alt=""
-          className="w-2/4"
+          className="w-3/4 h-1/6"
         />
       </div>
       <div className="bg-Hcolor w-full  flex justify-center items-center ">
-      <div className=" w-2/4   " >
+      <div className="w-2/4" >
+       
       <BookTypesList onTypeSelect={handleTypeSelect}   />
-        <BookList selectedType={selectedType} searchTerm={searchTerm} />
+      <BookList selectedType={selectedType} searchTerm={searchTerm} />
       </div>
       </div>
     </>

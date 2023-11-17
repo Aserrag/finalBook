@@ -28,10 +28,10 @@ const SearchBar = ({ onSearch }) => {
           onChange={handleChange}
           onKeyDown={handleKeyDown}
           className="w-full h-full bg-transparent text-lg text-textColor border-none outline-none"
-          placeholder="Search here ...."
+          placeholder=" Search..."
         />
         <button
-          className="ml-2 px-4 py-2 text-lg text-white bg-orange-700 rounded-full hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+          className="ml-2 px-4 py-2 text-lg text-white bg-orange-700 rounded-r-full hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
           onClick={handleSearch}
         >
           Search

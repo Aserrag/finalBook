@@ -12,7 +12,7 @@ const BookTypesList = ({ onTypeSelect }) => {
   ];
 
   return (
-      <div className="book-types-list sticky top-28 bg-Hcolor z-auto">
+      <div className="book-types-list   rounded-full w-full bg-bgbasic ">
       {bookTypes.map((bookType) => (
         <BookType
           key={bookType.type}

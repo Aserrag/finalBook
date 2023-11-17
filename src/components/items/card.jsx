@@ -54,11 +54,11 @@ const Card = ({ book }) => {
               {title}
             </h5>
           </a>
-          <p className="mb-4 text-sm text-gray-700 dark:text-gray-400">
+          {/* <p className="mb-4 text-sm text-gray-700 dark:text-gray-400">
             {isHovered
               ? `${summary.length > 20 ? summary.slice(0, 200) : summary}....`
               : `${summary.slice(0, 50)}....`}
-          </p>
+          </p> */}
           {isHovered && (
             <div>
               <button className="...">Read more</button>

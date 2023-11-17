@@ -97,7 +97,7 @@ class BookDirectory {
     summary:
       "For over a century, humans, dwarves, gnomes, and elves have lived together in relative peace. But times have changed, the uneasy peace is over, and now the races are fighting once again. The only good elf, it seems, is a dead elf.",
     audioUrl:
-      "https://ipaudio6.com/wp-content/uploads/BOOKAUDIO/Blood%20of%20Elves/1.mp3?_=1",
+      "https://files.audiobookss.com/audio/free-full-audiobook-the-time-of-contempt-the-witcher-book-2-by-andrzej-sapkowski/1072566310/Time%20of%20Contempt%20The%20Witcher,%20Book%202%20(Unabridged)%20-%20001-840874795.mp3",
     isRecommended: true,
     chapters: [
       new Chapters({
@@ -169,7 +169,7 @@ class BookDirectory {
     summary:
       "After walking through the portal in the Tower of Swallows while narrowly escaping death, Ciri finds herself in a completely different world... an Elven world. She is trapped with no way out. Time does not seem to exist and there are no obvious borders or portals to cross back into her home world.",
     audioUrl:
-      "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Lady%20of%20the%20Lake/01.mp3",
+      "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
     isRecommended: true,
     chapters: [
       new Chapters({
