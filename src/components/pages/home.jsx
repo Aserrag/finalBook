@@ -13,7 +13,6 @@ const Home = () => {
   };
 
   const handleSearch = (term) => {
-    console.log("Search Term:", term);
     setSearchTerm(term);
   };
 
@@ -22,8 +21,9 @@ const Home = () => {
       <div className="top" style={{ position: "absolute", top: "-100px" }} id="top"></div>
 
       <div className="bg-bgBasic">
-        <Header />
-        <SearchBar onSearch={handleSearch} />
+      
+        <Header /> <SearchBar onSearch={handleSearch} />
+        
       </div>
       <div className="bg-Hcolor">
         <BookTypesList onTypeSelect={handleTypeSelect} />

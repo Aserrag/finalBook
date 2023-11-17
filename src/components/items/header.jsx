@@ -1,33 +1,23 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import {CompleteLogo} from "./../../assets/img/index"
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { CompleteLogo } from "./../../assets/img/index";
+
+
 const Header = () => {
   return (
-    <header className='flex justify-between w-full h-0 p-4 md:py-1 md:px-6 mt-4'>
-            <div className="flex justify-center items-center">
-                <NavLink to="/home">
-                    <img src={CompleteLogo} alt="Logo" className='h-9' />
-                </NavLink>
-            </div>
+<>
+    <div className="top" style={{ position: "absolute", top: "-100px" }} id="top"></div>
+    <header className='flex flex-wrap justify-center lg:justify-start w-full h-20 p-4 md:py-1 md:px-6 mt-4'>
+      <div className="flex flex-wrap justify-center lg:justify-start ">
+        <NavLink to="/home">
+          <img src={CompleteLogo} alt="Logo" className='h-9' />
+          </NavLink>
 
-          
-
-            {/* <div className="flex justify-center items-center ml-7">
-                <NavLink to="/home">
-                    <img src={TextLogo} alt="Logo" className='h-12' />
-                </NavLink>
-            </div> */}
-
-          
-               
-                
-                   
-                
-
-          
-
-        </header>
-  )
+     
+      </div>
+    </header>
+    </>
+  );
 }
 
-export default Header
+export default Header;
