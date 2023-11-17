@@ -21,13 +21,22 @@ const Card = ({ book }) => {
   const [currentlyPlayingBook, setCurrentlyPlayingBook] = useState(null);
 
   const startPlayer = () => {
-    if (!isAudiobookPlaying || currentlyPlayingBook !== book) {
+    if (!isAudiobookPlaying &&  currentlyPlayingBook !== book) {
       dispatch({
         type: actionType.SET_AUDIOBOOK_PLAYING,
         isAudiobookPlaying: true,
         bookData: book,
       });
       setCurrentlyPlayingBook(book);
+    }
+
+
+
+    if(isAudiobookPlaying){
+
+
+alert("You Have to close the Playing book First");
+
     }
   };
   useEffect(() => {
@@ -66,7 +75,7 @@ const Card = ({ book }) => {
           >
             <MediaPlayer book={currentlyPlayingBook} />
           </motion.div>
-        )} {/* Render MediaPlayer only when isAudiobookPlaying is true */}
+         )}
           {chapters && chapters.length > 0 && (
             <div className="mt-4">
               {/* Add the chapters section if needed */}

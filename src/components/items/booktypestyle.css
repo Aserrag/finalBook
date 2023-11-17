@@ -1,0 +1,18 @@
+.book-types-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+  }
+  
+  .book-type {
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .icon {
+    font-size: 24px;
+  }
+  
+  .label {
+    margin-top: 5px;
+  }

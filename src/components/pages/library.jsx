@@ -3,15 +3,20 @@ import Header from '../items/header'
 
 import SearchBar from '../items/searchBar'
 import BookList from './../items/BookList';
+import Home from './home';
 
 const Library = () => {
   return (
-    <div>
+    <>
+      <div className="bg-bgBasic" >
       <Header/>
       <SearchBar/>
-      <BookList />
-   
-    </div>
+      </div>
+      <div className='bg-Hcolor'>
+      
+      </div>
+    </>
+    
   )
 }
 

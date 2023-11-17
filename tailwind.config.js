@@ -57,9 +57,9 @@ module.exports = {
         lighttextGray: "#9ca0ab",
         card: "#6998AB",//
         cartItem: "#2e3033",
-        items: "#406882",//
-        bgBasic: "#1A374D", //
-        Hcolor:"#B1D0E0",//
+        items: "#B1D0E0",//
+        bgBasic: "#406882", //
+        Hcolor:"#1A374D ",//
         cartTotal: "#343739",
         loaderOverlay: "rgba(256,256,256,0.1)",
       },

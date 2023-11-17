@@ -42,11 +42,11 @@ class BookDirectory {
         title: "Sword of Destiny",
         author: "Andrzej Sapkowski",
         rate: 4,
-        tags: ["Fantasy", "Drama", "Fiction"],
+        tags: ["Fantasy"],
         summary:
 
           "Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets",
-        audioUrl: "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Sword%20of%20Destiny/01.mp3?_=1",
+        audioUrl: "https://files.audiobookss.com/audio/free-full-audiobook-the-time-of-contempt-the-witcher-book-2-by-andrzej-sapkowski/1072566310/Time%20of%20Contempt%20The%20Witcher,%20Book%202%20(Unabridged)%20-%20001-840874795.mp3",
         isRecommended: true,
         chapters: [
           new Chapters({
@@ -68,7 +68,7 @@ class BookDirectory {
         title: "The Last Wish",
         author: "Andrzej Sapkowski",
         rate: 3,
-        tags: ["Fantasy", "Drama", "Fiction"],
+        tags: ["Fantasy",  ],
         summary:
           "Geralt the Witcher—revered and hated—is a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets",
         audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
@@ -93,7 +93,7 @@ class BookDirectory {
     title: "Blood of Elves",
     author: "Andrzej Sapkowski",
     rate: 5,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: [ "Fiction"],
     summary:
       "For over a century, humans, dwarves, gnomes, and elves have lived together in relative peace. But times have changed, the uneasy peace is over, and now the races are fighting once again. The only good elf, it seems, is a dead elf.",
     audioUrl:
@@ -117,7 +117,7 @@ class BookDirectory {
     title: "The Time of Contempt",
     author: "Andrzej Sapkowski",
     rate: 4,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: [ "Drama"],
     summary:
       "Geralt is a witcher: guardian of the innocent; protector of those in need; a defender, in dark times, against some of the most frightening creatures of myth and legend. His task, now, is to protect Ciri. A child of prophecy, she will have the power to change the world for good or for ill -- but only if she lives to use it.",
     audioUrl:
@@ -141,7 +141,7 @@ class BookDirectory {
     title: "The Tower of Swallows",
     author: "Andrzej Sapkowski",
     rate: 5,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: ["Fiction"],
     summary:
       "The world has fallen into war. Ciri, the child of prophecy, has vanished. Hunted by friends and foes alike, she has taken on the guise of a petty bandit and lives free for the first time in her life. But the net around her is closing. Geralt, the Witcher, has assembled a group of allies determined to rescue her. Both sides of the war have sent brutal mercenaries to hunt her down. Her crimes have made her famous.",
     audioUrl:
@@ -165,7 +165,7 @@ class BookDirectory {
     title: "The Lady of the Lake",
     author: "Andrzej Sapkowski",
     rate: 4,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: [  "Fiction"],
     summary:
       "After walking through the portal in the Tower of Swallows while narrowly escaping death, Ciri finds herself in a completely different world... an Elven world. She is trapped with no way out. Time does not seem to exist and there are no obvious borders or portals to cross back into her home world.",
     audioUrl:
@@ -195,7 +195,7 @@ class BookDirectory {
     title: "Harry Potter and the Philosopher’s Stone",
     author: "J.K. Rowling",
     rate: 4,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: [  "Fiction"],
     summary:
       "Harry Potter thinks he is an ordinary boy - until he is rescued by an owl, taken to Hogwarts School of Witchcraft and Wizardry, learns to play Quidditch and does battle in a deadly duel. The Reason ... HARRY POTTER IS A WIZARD!",
     audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-1.mp3",
@@ -224,7 +224,7 @@ class BookDirectory {
     title: "Harry Potter and the Chamber of Secrets",
     author: "J.K. Rowling",
     rate: 3,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: ["Fantasy", "Drama"],
     summary:
       "Ever since Harry Potter had come home for the summer, the Dursleys had been so mean and hideous that all Harry wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he’s packing his bags, Harry receives a warning from a strange impish creature who says that if Harry returns to Hogwarts, disaster will strike.",
     audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-7.mp3",
@@ -253,7 +253,7 @@ class BookDirectory {
     title: "Harry Potter and the Prisoner of Azkaban",
     author: "J.K. Rowling",
     rate: 5,
-    tags: ["Fantasy", "Drama", "Fiction"],
+    tags: [ "Drama", ],
     summary:"Harry Potter, along with his best friends, Ron and Hermione, is about to start his third year at Hogwarts School of Witchcraft and Wizardry. Harry can't wait to get back to school after the summer holidays. (Who wouldn't if they lived with the horrible Dursleys?) But when Harry gets to Hogwarts, the atmosphere is tense. There's an escaped mass murderer on the loose, and the sinister prison guards of Azkaban have been called in to guard the school...",
     audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-1.mp3",
     isRecommended: false,
@@ -277,7 +277,7 @@ class BookDirectory {
 ];
 
 
-// ... (other code)
+
  
       
     
