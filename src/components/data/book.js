@@ -357,18 +357,7 @@ class BookDirectory {
   }),
 
 
-  new Book({
-    poster: "assets/image/Image Placeholder 4.png",
-    bookCover: "assets/image/Image Placeholder 4.png",
-    title: "Harry Potter and the Prisoner of Azkaban",
-    authoer: "J.K. Rowling",
-    rate: 5,
-    tags: ["Fantasy", "Drama", "Fiction"],
-    summary:
-        "Harry Potter, along with his best friends, Ron and Hermione, is about to start his third year at Hogwarts School of Witchcraft and Wizardry. Harry can't wait to get back to school after the summer holidays. (Who wouldn't if they lived with the horrible Dursleys?) But when Harry gets to Hogwarts, the atmosphere is tense. There's an escaped mass murderer on the loose, and the sinister prison guards of Azkaban have been called in to guard the school...",
-    audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
-    isRecommended: false
-    }),
+
 
 
     new Book({
