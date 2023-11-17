@@ -19,13 +19,12 @@ const Home = () => {
   return (
     <>
       <div className="top" style={{ position: "absolute", top: "-100px" }} id="top"></div>
-  
-      <div className="bg-bgBasic">
-        <Header /> 
+
+      <div className="bg-bgBasic sticky top-0 z-10">
+        <Header />
         <SearchBar onSearch={handleSearch} />
       </div>
-      
-      
+
       <div className="bg-Hcolor pt-8 flex justify-center items-center">
         <img
           src="/assets/image/SocialGraphicTop10.png" 
@@ -34,14 +33,13 @@ const Home = () => {
         />
       </div>
       <div className="bg-Hcolor w-full  flex justify-center items-center ">
-      <div className="bg-Hcolor w-2/4   " >
-      <BookTypesList onTypeSelect={handleTypeSelect}  />
+      <div className=" w-2/4   " >
+      <BookTypesList onTypeSelect={handleTypeSelect}   />
         <BookList selectedType={selectedType} searchTerm={searchTerm} />
       </div>
       </div>
     </>
   );
-  
 };
 
 export default Home;

@@ -20,14 +20,14 @@ const SearchBar = ({ onSearch }) => {
   };
 
   return (
-    <div className="sticky top-0 z-10"  >
-      <div className=" p-1 w-1/2 bg-items shadow-xl rounded-full flex items-center mx-96  bg-searchb ">
+    <div className="sticky top-0 z-10">
+      <div className="p-1 md:w-1/2 mx-auto bg-items shadow-xl rounded-full flex items-center bg-searchb">
         <input
           type="text"
           value={searchTerm}
           onChange={handleChange}
           onKeyDown={handleKeyDown}
-          className="w-full h-full  bg-transparent text-lg  text-textColor border-none outline-none"
+          className="w-full h-full bg-transparent text-lg text-textColor border-none outline-none"
           placeholder="Search here ...."
         />
         <button
