@@ -58,7 +58,7 @@ module.exports = {
         card: "#F4EAE0",//
         cartItem: "#2e3033",
         searchb: "#FFFFFF",//
-        bgBasic: "#FFD28F", //
+        bgBasic: "#FAF6F0", //
         Hcolor:"#F4DFC8",//
         cartTotal: "#343739",
         loaderOverlay: "rgba(256,256,256,0.1)",
