@@ -255,7 +255,7 @@ class BookDirectory {
     rate: 5,
     tags: [ "Drama", ],
     summary:"Harry Potter, along with his best friends, Ron and Hermione, is about to start his third year at Hogwarts School of Witchcraft and Wizardry. Harry can't wait to get back to school after the summer holidays. (Who wouldn't if they lived with the horrible Dursleys?) But when Harry gets to Hogwarts, the atmosphere is tense. There's an escaped mass murderer on the loose, and the sinister prison guards of Azkaban have been called in to guard the school...",
-    audioUrl: "https://free2.audiobookslab.com/audio/HP-1-By-Stephen-Fry/HP-and-the-philosopher-stone-audiobook-ch-1.mp3",
+    audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
     isRecommended: false,
     chapters: [
       new Chapters({
@@ -274,6 +274,120 @@ class BookDirectory {
     ],
   
   }),
+  new Book({
+    poster: "assets/image/hp6_500x500._CB1198675309_.jpg",
+    bookCover: "assets/image/hp6_500x500._CB1198675309_.jpg",
+    title: "Harry Potter and the Half-Blood Prince",
+    author: "J.K. Rowling",
+    rate: 3,
+    tags: ["Fantasy", "Drama", "Fiction"],
+    summary:
+      "It is the middle of the summer, but there is an unseasonal mist pressing against the windowpanes. Harry Potter is waiting nervously in his bedroom at the Dursleys' house in Privet Drive for a visit from Professor Dumbledore himself. One of the last times he saw the Headmaster was in a fierce one-to-one duel with Lord Voldemort, and Harry can't quite believe that Professor Dumbledore will actually appear at the Dursleys' of all places. Why is the Professor coming to visit him now? What is it that cannot wait until Harry returns to Hogwarts in a few weeks' time? Harry's sixth year at Hogwarts has already got off to an unusual start, as the worlds of Muggle and magic start to intertwine",
+    audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
+    isRecommended: false,
+    chapters: [
+      {
+        chapterId: 1,
+        chapterName: "First Chapter",
+        chapterUrl:
+          "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
+      },
+      {
+        chapterId: 2,
+        chapterName: "Second Chapter",
+        chapterUrl:
+          "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
+      },
+    ],
+  }),
+
+
+  new Book({
+    poster: "assets/image/e5f82111504d28779262bf2dca0fad56.png",
+    bookCover: "assets/image/9786257270472.jpeg",
+    title: "1984",
+    author: "George Orwell",
+    rate: 3,
+    tags: ["Fantasy", "Drama", "Fiction"],
+    summary:
+      "The new novel by George Orwell is the major work towards which all his previous writing has pointed. Critics have hailed it as his most solid, most brilliant work. Though the story of Nineteen Eighty-Four takes place thirty-five years hence, it is in every sense timely. The scene is London, where there has been no new housing since 1950 and where the city-wide slums are called Victory Mansions. Science has abandoned Man for the State. As every citizen knows only too well, war is peace.To Winston Smith, a young man who works in the Ministry of Truth (Minitru for short), come two people who transform this life completely. One is Julia, whom he meets after she hands him a slip reading, I love you. The other is O'Brien, who tells him, We shall meet in the place where there is no darkness. The way in which Winston is betrayed by the one and, against his own desires and instincts, ultimately betrays the other, makes a story of mounting drama and suspense.",
+    audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
+    isRecommended: true,
+    chapters: [
+      new Chapters({
+        chapterId: 1,
+        chapterName: "First Chapter",
+        chapterUrl:
+          "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
+      }),
+      new Chapters({
+        chapterId: 2,
+        chapterName: "Second Chapter",
+        chapterUrl:
+          "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
+      }),
+    ],
+  }),
+
+  new Book({
+    poster: "assets/image/hp7_500x500._CB1198675309_.jpg",
+    bookCover: "assets/image/hp7_500x500._CB1198675309_.jpg",
+    title: "Harry Potter and the Deathly Hallows",
+    author: "J.K. Rowling",
+    rate: 3,
+    tags: ["Fantasy", "Drama", "Fiction"],
+    summary:
+      "Harry has been burdened with a dark, dangerous and seemingly impossible task: that of locating and destroying Voldemort's remaining Horcruxes. Never has Harry felt so alone, or faced a future so full of shadows. But Harry must somehow find within himself the strength to complete the task he has been given. He must leave the warmth, safety and companionship of The Burrow and follow without fear or hesitation the inexorable path laid out for him...",
+    audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
+    isRecommended: false,
+    chapters: [
+      new Chapters({
+        chapterId: 1,
+        chapterName: "First Chapter",
+        chapterUrl:
+          "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=1",
+      }),
+      new Chapters({
+        chapterId: 2,
+        chapterName: "Second Chapter",
+        chapterUrl:
+          "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
+      }),
+    ],
+  }),
+
+
+  new Book({
+    poster: "assets/image/Image Placeholder 4.png",
+    bookCover: "assets/image/Image Placeholder 4.png",
+    title: "Harry Potter and the Prisoner of Azkaban",
+    authoer: "J.K. Rowling",
+    rate: 5,
+    tags: ["Fantasy", "Drama", "Fiction"],
+    summary:
+        "Harry Potter, along with his best friends, Ron and Hermione, is about to start his third year at Hogwarts School of Witchcraft and Wizardry. Harry can't wait to get back to school after the summer holidays. (Who wouldn't if they lived with the horrible Dursleys?) But when Harry gets to Hogwarts, the atmosphere is tense. There's an escaped mass murderer on the loose, and the sinister prison guards of Azkaban have been called in to guard the school...",
+    audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
+    isRecommended: false
+    }),
+
+
+    new Book({
+      poster: "assets/image/hp2_500x500._CB1198675309_.jpg",
+      bookCover: "assets/image/hp2_500x500._CB1198675309_.jpg",
+      title: "Harry Potter and the Chamber of Secrets",
+      authoer: "J.K. Rowling",
+      rate: 3,
+      tags: ["Fantasy", "Drama", "Fiction"],
+      summary:
+          "Ever since Harry Potter had come home for the summer, the Dursleys had been so mean and hideous that all Harry wanted was to get back to the Hogwarts School for Witchcraft and Wizardry. But just as he’s packing his bags, Harry receives a warning from a strange impish creature who says that if Harry returns to Hogwarts, disaster will strike.",
+      audioUrl: "https://free.audiobookslab.com/audio/the-last-wish-complete.mp3?_=2",
+      isRecommended: false
+    
+    })
+
+
+
+
 ];
 
 
