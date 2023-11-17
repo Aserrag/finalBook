@@ -55,11 +55,11 @@ module.exports = {
         darkOverlay: "rgba(0,0,0,0.5)",
         lightOverlay: "rgba(256,256,256,0.2)",
         lighttextGray: "#9ca0ab",
-        card: "#6998AB",//
+        card: "#F4EAE0",//
         cartItem: "#2e3033",
-        items: "#406882",//
-        bgBasic: "#1A374D", //
-        Hcolor:"#B1D0E0",//
+        searchb: "#FFFFFF",//
+        bgBasic: "#FAF6F0", //
+        Hcolor:"#F4DFC8",//
         cartTotal: "#343739",
         loaderOverlay: "rgba(256,256,256,0.1)",
       },
