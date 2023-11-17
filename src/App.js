@@ -1,25 +1,40 @@
-import { Home, Library, Login } from "./components/pages";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Home, Library, Login,SignUp } from "./components/pages";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useStateValue } from "./Context/StateProvider";
+import { useEffect } from "react";
+import { NavLink, useNavigate } from 'react-router-dom';
+
+
 
 function App() {
    const [{ isAudiobookPlaying, bookData }, dispatch] = useStateValue();
+  //  const navigate = useNavigate();
+
+  //  useEffect(() => {
+  //   if (window.localStorage.getItem("auth") === "true")
+  //     navigate("/home", { replace: true });
+  // }, []);
 
 
   return (
+    <Router>
     <div className="h-auto flex items-center justify-center min-w-[680px]">
-      <header className="w-full h-full flex flex-col justify-center text-center">
-        <BrowserRouter>
+      <div className="w-full h-full flex flex-col justify-center text-center">
+        
+      <section>
           <Routes>
-            <Route path="/login" element={<Login />} />
-            <Route path="/*" element={<Home />} />
-            <Route path="/library" element={<Library />} />
+
+            <Route path='/*' element={<Login />} />
+            <Route path='/home' element={<Home/>} />
+            <Route path='/library' element={<Library />} />
+            <Route path='/signup' element={<SignUp />} />
+            {/* <Route path="/userProfile" element={<UserProfile />} /> */}
           </Routes>
-        </BrowserRouter>
-      </header>
+          </section>
+      </div>
 
       {/* {isAudiobookPlaying && (
         <motion.div
@@ -32,6 +47,7 @@ function App() {
         </motion.div>
       )} */}
     </div>
+    </Router>
   );
 }
 

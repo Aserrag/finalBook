@@ -1,3 +1,5 @@
-export { default as Logo } from "../img/BookifyImageIcon.jpg"
+export { default as Logo } from "../img/iti-logo.png"
 export {default as TextLogo} from "./BookifyTextIcon.png"
 export {default as CompleteLogo} from "./BookifyCompleteIcon.png"
+export {default as login} from "./login.jpg"
+export {default as login2} from "./login-2.jpg"
