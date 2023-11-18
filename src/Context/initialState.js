@@ -12,5 +12,7 @@ export const initialState = {
     audiobook: 0,
     isAudiobookPlaying: false,
     miniPlayer: false,
+    playlist: []
+    
   };
   

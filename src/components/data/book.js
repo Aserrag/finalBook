@@ -8,6 +8,7 @@ class Chapters {
 
 class Book {
   constructor({
+    id,
     poster,
     bookCover,
     title,
@@ -19,6 +20,7 @@ class Book {
     isRecommended,
     chapters,
   }) {
+    this.id=id;
     this.poster = poster;
     this.bookCover = bookCover;
     this.title = title;
@@ -36,33 +38,33 @@ class BookDirectory {
   constructor() {
     this.listOfBooks = [
       // Existing book
-      new Book({
-        poster: "/assets/image/SwordOfDestiny.jpg",
-        bookCover: "/assets/image/SwordOfDestinyBookCover.jpg",
-        title: "Sword of Destiny",
-        author: "Andrzej Sapkowski",
-        rate: 4,
-        tags: ["Fantasy"],
-        summary:
+        new Book({ id : 1 ,
+          poster: "/assets/image/SwordOfDestiny.jpg",
+          bookCover: "/assets/image/SwordOfDestinyBookCover.jpg",
+          title: "Sword of Destiny",
+          author: "Andrzej Sapkowski",
+          rate: 4,
+          tags: ["Fantasy"],
+          summary:
 
-          "Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets",
-        audioUrl: "https://files.audiobookss.com/audio/free-full-audiobook-the-time-of-contempt-the-witcher-book-2-by-andrzej-sapkowski/1072566310/Time%20of%20Contempt%20The%20Witcher,%20Book%202%20(Unabridged)%20-%20001-840874795.mp3",
-        isRecommended: true,
-        chapters: [
-          new Chapters({
-            chapterId: 1,
-            chapterName: "Chapter 1",
-            chapterUrl: "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Sword%20of%20Destiny/01.mp3?_=1"
-          }),
-          new Chapters({
-            chapterId: 2,
-            chapterName: "Chapter 2",
-            chapterUrl: "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Sword%20of%20Destiny/02.mp3"
-          }),
-        ]
-      }),
+            "Geralt is a witcher, a man whose magic powers, enhanced by long training and a mysterious elixir, have made him a brilliant fighter and a merciless assassin. Yet he is no ordinary murderer: his targets",
+          audioUrl: "https://files.audiobookss.com/audio/free-full-audiobook-the-time-of-contempt-the-witcher-book-2-by-andrzej-sapkowski/1072566310/Time%20of%20Contempt%20The%20Witcher,%20Book%202%20(Unabridged)%20-%20001-840874795.mp3",
+          isRecommended: true,
+          chapters: [
+            new Chapters({
+              chapterId: 1,
+              chapterName: "Chapter 1",
+              chapterUrl: "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Sword%20of%20Destiny/01.mp3?_=1"
+            }),
+            new Chapters({
+              chapterId: 2,
+              chapterName: "Chapter 2",
+              chapterUrl: "https://ipaudio.club/wp-content/uploads/HQ/TRECIA/Sword%20of%20Destiny/02.mp3"
+            }),
+          ]
+        }),
       // New book
-      new Book({
+      new Book({ id : 2 ,
         poster: "/assets/image/theLastWhish.jpg",
         bookCover: "/assets/image/theLastWhishBookCover.jpg",
         title: "The Last Wish",
@@ -87,7 +89,7 @@ class BookDirectory {
 
 
   // New book: Blood of Elves
-  new Book({
+  new Book({ id : 3 ,
     poster: "assets/image/bloodOfElves.jpg",
     bookCover: "assets/image/bloodOfElvesBookCover.jpg",
     title: "Blood of Elves",
@@ -111,7 +113,7 @@ class BookDirectory {
   }),
 
   // New book: The Time of Contempt
-  new Book({
+  new Book({ id : 4 ,
     poster: "assets/image/timeOfContempt.jpg",
     bookCover: "assets/image/timeOfContemptBookCover.jpg",
     title: "The Time of Contempt",
@@ -135,7 +137,7 @@ class BookDirectory {
   }),
 
   // New book: The Tower of Swallows
-  new Book({
+  new Book({ id : 5 ,
     poster: "assets/image/towerOfSwallows.jpg",
     bookCover: "assets/image/towerOfSwallowsBookCover.jpg",
     title: "The Tower of Swallows",
@@ -159,7 +161,7 @@ class BookDirectory {
   }),
 
   // New book: The Lady of the Lake
-  new Book({
+  new Book({ id : 6 ,
     poster: "assets/image/ladyOfTheLake.jpg",
     bookCover: "assets/image/ladyOfTheLakeBookCover.jpg",
     title: "The Lady of the Lake",
@@ -189,7 +191,7 @@ class BookDirectory {
   }),
 
   // New book: Harry Potter and the Philosopher’s Stone
-  new Book({
+  new Book({ id : 7 ,
     poster: "assets/image/hp1_500x500._CB1198675309_.jpg",
     bookCover: "assets/image/hp1_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Philosopher’s Stone",
@@ -218,7 +220,7 @@ class BookDirectory {
   }),
 
   // New book: Harry Potter and the Chamber of Secrets
-  new Book({
+  new Book({ id : 8 ,
     poster: "assets/image/hp2_500x500._CB1198675309_.jpg",
     bookCover: "assets/image/hp2_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Chamber of Secrets",
@@ -247,7 +249,7 @@ class BookDirectory {
   }),
 
   
-  new Book({
+  new Book({ id : 9 ,
     poster: "assets/image/Image Placeholder 4.png",
     bookCover: "assets/image/Image Placeholder 4.png",
     title: "Harry Potter and the Prisoner of Azkaban",
@@ -274,7 +276,7 @@ class BookDirectory {
     ],
   
   }),
-  new Book({
+  new Book({ id : 10 ,
     poster: "assets/image/hp6_500x500._CB1198675309_.jpg",
     bookCover: "assets/image/hp6_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Half-Blood Prince",
@@ -302,7 +304,7 @@ class BookDirectory {
   }),
 
 
-  new Book({
+  new Book({ id : 11 ,
     poster: "assets/image/e5f82111504d28779262bf2dca0fad56.png",
     bookCover: "assets/image/9786257270472.jpeg",
     title: "1984",
@@ -329,7 +331,7 @@ class BookDirectory {
     ],
   }),
 
-  new Book({
+  new Book({ id : 12 ,
     poster: "assets/image/hp7_500x500._CB1198675309_.jpg",
     bookCover: "assets/image/hp7_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Deathly Hallows",
@@ -360,7 +362,7 @@ class BookDirectory {
 
 
 
-    new Book({
+    new Book({ id : 13 ,
       poster: "assets/image/hp2_500x500._CB1198675309_.jpg",
       bookCover: "assets/image/hp2_500x500._CB1198675309_.jpg",
       title: "Harry Potter and the Chamber of Secrets",
