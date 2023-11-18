@@ -1,12 +1,31 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from '../items/header';
 import SearchBar from '../items/searchBar';
 import BookList from '../items/BookList';
 import BookTypesList from './../items/BookTypeList';
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState('All');
   const [searchTerm, setSearchTerm] = useState('');
+  useEffect(()=>{
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          // ...
+          console.log("uid", uid)
+        } else {
+          window.localStorage.setItem("auth", false);
+          navigate("/login")
+        }
+      });
+     
+}, [])
 
   const handleTypeSelect = (type) => {
     setSelectedType(type);

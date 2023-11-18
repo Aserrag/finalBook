@@ -1,16 +1,37 @@
-import React, { useEffect } from 'react'
-import { login, login2,Logo } from '../../assets/img'
+import React, { useEffect, useState } from 'react'
+import { login, login2, Logo } from '../../assets/img'
 import { ReactDOM } from 'react'
 import { TEInput, TERipple } from 'tw-elements-react'
-import { auth,provider } from '../../firebase'
+import { auth, provider } from '../../firebase'
 import { useNavigate } from 'react-router-dom'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 
 
 
 const Login = () => {
-
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onLogin = (e) => {
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+        // Signed in
+        window.localStorage.setItem("auth", true);
+        const user = userCredential.user;
+        navigate("/home")
+        console.log(user);
+    })
+    .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode, errorMessage)
+    });
+   
+}
+
 
   const loginWithGoogle = async () => {
     try {
@@ -28,7 +49,7 @@ const Login = () => {
     if (window.localStorage.getItem("auth") === "true")
       navigate("/home", { replace: true });
   }, [navigate]);
-  
+
   return (
     <section className='flex h-screen w-screen justify-center bg-Hcolor   bg-no-repeat bg-center bg-[length:100%_100%] '
     // style={{ backgroundImage: `url(${login})` }}
@@ -46,23 +67,27 @@ const Login = () => {
 
           {/* <!-- Right column container with form --> */}
           <div className="md:w-8/12 lg:ml-6 lg:w-5/12">
-          <div className='text-2xl pb-16'>Sign in</div>
-          
+            <div className='text-2xl pb-16'>Sign in</div>
+
             <form>
               {/* <!-- Email input --> */}
               <TEInput
+                name='email'
                 type="email"
                 label="Email address"
                 size="lg"
                 className="mb-6"
+                onChange={(e)=>setEmail(e.target.value)}
               ></TEInput>
 
               {/* <!--Password input--> */}
               <TEInput
+                name='password'
                 type="password"
                 label="Password"
                 className="mb-6"
                 size="lg"
+                onChange={(e)=>setPassword(e.target.value)}
               ></TEInput>
 
               {/* <!-- Remember me checkbox --> */}
@@ -96,6 +121,7 @@ const Login = () => {
 
               <TERipple rippleColor="light" className="w-full">
                 <button
+                onClick={onLogin}
                   type="button"
                   className="inline-block w-full rounded bg-primary px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 >
@@ -132,7 +158,7 @@ const Login = () => {
               </TERipple>
               <TERipple onClick={loginWithGoogle} rippleColor="light" className="w-full">
                 <a
-                
+
                   className="mb-3 flex w-full items-center justify-center rounded bg-info px-7 pb-2.5 pt-3 text-center text-sm font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#54b4d3] transition duration-150 ease-in-out hover:bg-info-600 hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:bg-info-600 focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] focus:outline-none focus:ring-0 active:bg-info-700 active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.3),0_4px_18px_0_rgba(84,180,211,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(84,180,211,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(84,180,211,0.2),0_4px_18px_0_rgba(84,180,211,0.1)]"
                   style={{ backgroundColor: "#55acee" }}
                   href="#!"
