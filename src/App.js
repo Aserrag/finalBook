@@ -1,4 +1,4 @@
-import { Home, Library, Login,SignUp,bookInfo } from "./components/pages";
+import { Home, Library, Login,SignUp,BookInfo } from "./components/pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
@@ -32,7 +32,7 @@ function App() {
             <Route path='/home' element={<Home/>} />
             <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/bookinfo/:bookindex' element={<bookInfo />} />
+            <Route path='/bookinfo/:bookId' element={<BookInfo />} />
             {/* <Route path="/userProfile" element={<UserProfile />} /> */}
           </Routes>
           </section>
