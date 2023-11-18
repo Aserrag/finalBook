@@ -3,6 +3,7 @@ import { useStateValue } from "../../Context/StateProvider";
 import { actionType } from "../../Context/reducer";
 import MediaPlayer from "./mediaPlayer";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Card = ({ book }) => {
   const { poster, title, summary, isRecommended, chapters } = book;
@@ -61,7 +62,7 @@ const Card = ({ book }) => {
           </p> */}
           {isHovered && (
             <div>
-              <button className="...">Read more</button>
+              <Link to={`/bookinfo/${book.id}`}>Read more</Link>
               <span className="mx-2"></span>
               <button className="..." onClick={startPlayer}>
                 Listen
