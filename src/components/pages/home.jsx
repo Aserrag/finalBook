@@ -42,11 +42,13 @@ useEffect(() => {
   };
 
   return (
-    <>
-      <div className="top" style={{ position: "absolute", top: "-100px" }} id="top"></div>
+    <div className="bg-Hcolor">
+      <div className="top bg-Hcolor" style={{ position: "absolute", top: "-100px" }} id="top"></div>
 
-      <div className="bg-bgBasic sticky top-0 z-10">
+      <div className="bg-Hcolor sticky top-0 z-10 m-2">
         <Header />
+        </div>
+        <div className="bg-Hcolor">
         <SearchBar onSearch={handleSearch} />
       </div>
 
@@ -64,7 +66,7 @@ useEffect(() => {
       <BookList selectedType={selectedType} searchTerm={searchTerm} />
       </div>
       </div>
-    </>
+    </div>
   );
 };
 

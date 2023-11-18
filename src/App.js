@@ -1,4 +1,4 @@
-import { Home, Library, Login,SignUp } from "./components/pages";
+import { Home, Library, Login,SignUp,BookInfo } from "./components/pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
@@ -22,8 +22,8 @@ function App() {
 
   return (
     <Router>
-    <div className="h-auto flex items-center justify-center min-w-[680px]">
-      <div className="w-full h-full flex flex-col justify-center text-center">
+    <div className="h-auto flex items-center justify-center min-w-[680px] bg-Hcolor">
+      <div className="w-full h-full flex flex-col justify-center text-center  bg-Hcolor">
         
       <section>
           <Routes>
@@ -32,6 +32,7 @@ function App() {
             <Route path='/home' element={<Home/>} />
             <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
+            <Route path='/bookinfo/:bookId' element={<BookInfo />} />
             {/* <Route path="/userProfile" element={<UserProfile />} /> */}
           </Routes>
           </section>
