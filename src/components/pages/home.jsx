@@ -6,6 +6,7 @@ import BookTypesList from './../items/BookTypeList';
 import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import { login } from "../../assets/img";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -54,9 +55,10 @@ useEffect(() => {
 
       <div className="bg-Hcolor pt-8 flex justify-center items-center">
         <img
-          src="/assets/image/SocialGraphicTop10.png" 
+  
+          src={login}
           alt=""
-          className="w-3/4 h-1/6"
+          className="w-3/4 h-510"
         />
       </div>
       <div className="bg-Hcolor w-full  flex justify-center items-center ">

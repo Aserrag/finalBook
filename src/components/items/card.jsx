@@ -3,9 +3,12 @@ import { useStateValue } from "../../Context/StateProvider";
 import { actionType } from "../../Context/reducer";
 import MediaPlayer from "./mediaPlayer";
 import { motion } from "framer-motion";
+import { Link, useNavigate } from "react-router-dom";
+import { Button } from "@material-tailwind/react";
 
 const Card = ({ book }) => {
-  const {id, poster, title, summary, isRecommended, chapters } = book;
+  const {id, poster, title, summary, isRecommended, chapters ,author,bookCover} = book;
+  const navigate = useNavigate();
 
   const [{ isAudiobookPlaying }, dispatch] = useStateValue();
   const [isHovered, setIsHovered] = useState(false);
@@ -61,13 +64,23 @@ const Card = ({ book }) => {
               {title}
             </h5>
           </a>
-          {isHovered && (
-            <div>
-              <button className="...">Read more</button>
+          {isHovered && ( 
+            <div className="flex justify-start flex-col gap-2">
+              {/* <Link  to={{
+                pathname:`/bookinfo/${id}`,
+                search: `?book=${book}`,
+                 }} 
+                 params>Read more</Link> */}
+                 <Button onClick={()=>{
+                  navigate(`/bookinfo/${id}`,{
+                    state:{
+                      poster,title,summary,author,bookCover
+                    }
+                  } ) }}>Read More</Button>
               <span className="mx-2"></span>
-              <button className="..." onClick={startPlayer}>
+              <Button  onClick={startPlayer}>
                 Listen
-              </button>
+              </Button>
             </div>
           )}
           {isAudiobookPlaying && currentlyPlayingBook && (

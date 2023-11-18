@@ -90,8 +90,8 @@ class BookDirectory {
 
   // New book: Blood of Elves
   new Book({ id : 3 ,
-    poster: "assets/image/bloodOfElves.jpg",
-    bookCover: "assets/image/bloodOfElvesBookCover.jpg",
+    poster: "/assets/image/bloodOfElves.jpg",
+    bookCover: "/assets/image/bloodOfElvesBookCover.jpg",
     title: "Blood of Elves",
     author: "Andrzej Sapkowski",
     rate: 5,
@@ -114,8 +114,8 @@ class BookDirectory {
 
   // New book: The Time of Contempt
   new Book({ id : 4 ,
-    poster: "assets/image/timeOfContempt.jpg",
-    bookCover: "assets/image/timeOfContemptBookCover.jpg",
+    poster: "/assets/image/timeOfContempt.jpg",
+    bookCover: "/assets/image/timeOfContemptBookCover.jpg",
     title: "The Time of Contempt",
     author: "Andrzej Sapkowski",
     rate: 4,
@@ -138,8 +138,8 @@ class BookDirectory {
 
   // New book: The Tower of Swallows
   new Book({ id : 5 ,
-    poster: "assets/image/towerOfSwallows.jpg",
-    bookCover: "assets/image/towerOfSwallowsBookCover.jpg",
+    poster: "/assets/image/towerOfSwallows.jpg",
+    bookCover: "/assets/image/towerOfSwallowsBookCover.jpg",
     title: "The Tower of Swallows",
     author: "Andrzej Sapkowski",
     rate: 5,
@@ -162,8 +162,8 @@ class BookDirectory {
 
   // New book: The Lady of the Lake
   new Book({ id : 6 ,
-    poster: "assets/image/ladyOfTheLake.jpg",
-    bookCover: "assets/image/ladyOfTheLakeBookCover.jpg",
+    poster: "/assets/image/ladyOfTheLake.jpg",
+    bookCover: "/assets/image/ladyOfTheLakeBookCover.jpg",
     title: "The Lady of the Lake",
     author: "Andrzej Sapkowski",
     rate: 4,
@@ -192,8 +192,8 @@ class BookDirectory {
 
   // New book: Harry Potter and the Philosopher’s Stone
   new Book({ id : 7 ,
-    poster: "assets/image/hp1_500x500._CB1198675309_.jpg",
-    bookCover: "assets/image/hp1_500x500._CB1198675309_.jpg",
+    poster: "/assets/image/hp1_500x500._CB1198675309_.jpg",
+    bookCover: "/assets/image/hp1_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Philosopher’s Stone",
     author: "J.K. Rowling",
     rate: 4,
@@ -221,8 +221,8 @@ class BookDirectory {
 
   // New book: Harry Potter and the Chamber of Secrets
   new Book({ id : 8 ,
-    poster: "assets/image/hp2_500x500._CB1198675309_.jpg",
-    bookCover: "assets/image/hp2_500x500._CB1198675309_.jpg",
+    poster: "/assets/image/hp2_500x500._CB1198675309_.jpg",
+    bookCover: "/assets/image/hp2_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Chamber of Secrets",
     author: "J.K. Rowling",
     rate: 3,
@@ -250,8 +250,8 @@ class BookDirectory {
 
   
   new Book({ id : 9 ,
-    poster: "assets/image/Image Placeholder 4.png",
-    bookCover: "assets/image/Image Placeholder 4.png",
+    poster: "/assets/image/Image Placeholder 4.png",
+    bookCover: "/assets/image/Image Placeholder 4.png",
     title: "Harry Potter and the Prisoner of Azkaban",
     author: "J.K. Rowling",
     rate: 5,
@@ -277,8 +277,8 @@ class BookDirectory {
   
   }),
   new Book({ id : 10 ,
-    poster: "assets/image/hp6_500x500._CB1198675309_.jpg",
-    bookCover: "assets/image/hp6_500x500._CB1198675309_.jpg",
+    poster: "/assets/image/hp6_500x500._CB1198675309_.jpg",
+    bookCover: "/assets/image/hp6_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Half-Blood Prince",
     author: "J.K. Rowling",
     rate: 3,
@@ -305,8 +305,8 @@ class BookDirectory {
 
 
   new Book({ id : 11 ,
-    poster: "assets/image/e5f82111504d28779262bf2dca0fad56.png",
-    bookCover: "assets/image/9786257270472.jpeg",
+    poster: "/assets/image/e5f82111504d28779262bf2dca0fad56.png",
+    bookCover: "/assets/image/9786257270472.jpeg",
     title: "1984",
     author: "George Orwell",
     rate: 3,
@@ -332,8 +332,8 @@ class BookDirectory {
   }),
 
   new Book({ id : 12 ,
-    poster: "assets/image/hp7_500x500._CB1198675309_.jpg",
-    bookCover: "assets/image/hp7_500x500._CB1198675309_.jpg",
+    poster: "/assets/image/hp7_500x500._CB1198675309_.jpg",
+    bookCover: "/assets/image/hp7_500x500._CB1198675309_.jpg",
     title: "Harry Potter and the Deathly Hallows",
     author: "J.K. Rowling",
     rate: 3,
@@ -363,8 +363,8 @@ class BookDirectory {
 
 
     new Book({ id : 13 ,
-      poster: "assets/image/hp2_500x500._CB1198675309_.jpg",
-      bookCover: "assets/image/hp2_500x500._CB1198675309_.jpg",
+      poster: "/assets/image/hp2_500x500._CB1198675309_.jpg",
+      bookCover: "/assets/image/hp2_500x500._CB1198675309_.jpg",
       title: "Harry Potter and the Chamber of Secrets",
       authoer: "J.K. Rowling",
       rate: 3,

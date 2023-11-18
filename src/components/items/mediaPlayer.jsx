@@ -26,7 +26,7 @@ const MediaPlayer = ({ book }) => {
   const [{ playlist }] = useStateValue();
 
   // Destructure book properties
-  const { title, author, rate, poster, bookCover , audioUrl } = book;
+  const { title, author, rate, poster, bookCover , audioUrl,id } = book;
 
   const onClickNext = () => {
     dispatch({ type: 'NEXT_AUDIOBOOK' });
@@ -153,7 +153,7 @@ const MediaPlayer = ({ book }) => {
 
 {isPlayList && (
         <>
-          <PlayListCard key={book.title} book={book} />
+          <PlayListCard key={book.id} book={book} />
         </>
       )}
   </div>
@@ -178,8 +178,9 @@ export const PlayListCard = ({ book }) => {
   };
 
   return (
+    <div className="absolute left-4 bottom-24 gap-2 py-2 w-350 max-w-[350px] h-510 max-h-[510px] flex flex-col overflow-y-scroll scrollbar-thin rounded-md shadow-md bg-primary">
     <motion.div
-      initial={{ opacity: 0, translateX: -50 }}
+      initial={{ opacity: 0, translateX: -100 }}
       animate={{ opacity: 1, translateX: 0 }}
       transition={{ duration: 0.2 }}
       className={`group w-full p-4 hover:bg-card flex gap-3 items-center cursor-pointer ${
@@ -207,6 +208,7 @@ export const PlayListCard = ({ book }) => {
         </button>
       </div>
     </motion.div>
+    </div>
   );
 }
 

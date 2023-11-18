@@ -1,23 +1,16 @@
 import React, { useEffect } from 'react'
 import { TERipple } from 'tw-elements-react';
-
-
-import {
-    Card,
-    CardHeader,
-    CardBody,
-    Typography,
-    Button,
-  } from "@material-tailwind/react";
-import { useParams } from 'react-router-dom';
+import { Card,CardHeader,CardBody,Typography,Button,} from "@material-tailwind/react";
+import { useLocation, useParams } from 'react-router-dom';
 
 const BookInfo = ({ book }) => {
-    const { poster, title, summary, isRecommended, chapters ,bookCover,author} = book;
+  // const { poster, title, summary, isRecommended, chapters ,bookCover,author} = book;
 
-    const {bookId}= useParams();
-    useEffect(()=>{
-         
-    })
+
+  const params = useLocation();
+    console.log(params);
+    const {bookid}= useParams();
+ 
 
   return (
     <Card className="w-[100%-100px]  h-screen p-5 m-5 rounded-lg flex-row">
@@ -27,7 +20,7 @@ const BookInfo = ({ book }) => {
       className="m-0 w-2/5 shrink-0 rounded-r-none"
     >
       <img
-        src={poster?.book}
+       src={params.state.bookCover}
         alt="card-image"
         className="h-full w-full object-cover rounded-md"
       />
@@ -35,17 +28,17 @@ const BookInfo = ({ book }) => {
     <CardBody className=' m-10'>
     
       <Typography variant="h4" color="blue-gray" className="mb-2">
-      {title}
+      {params.state.title}
       </Typography>
       <Typography variant="h6" color="gray" className="mb-4 uppercase">
-      {author}
+      {params.state.author}
       </Typography>
       <Typography color="gray" className="mb-8 font-normal">
-        {summary}
+        {params.state.summary}
       </Typography>
       <a href="#" className="inline-block">
         <Button variant="text" className="flex items-center gap-2">
-          Listen OR add to playlist if playing 
+          back to Home
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
