@@ -27,6 +27,12 @@ const Home = () => {
      
 }, [])
 
+useEffect(() => {
+  if (window.localStorage.getItem("auth") === "false")
+    navigate("/login", { replace: true });
+}, [navigate]);
+
+
   const handleTypeSelect = (type) => {
     setSelectedType(type);
   };

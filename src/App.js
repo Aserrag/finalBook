@@ -10,6 +10,7 @@ import { NavLink, useNavigate } from 'react-router-dom';
 
 
 function App() {
+  
    const [{ isAudiobookPlaying, bookData }, dispatch] = useStateValue();
   //  const navigate = useNavigate();
 

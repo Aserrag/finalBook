@@ -1,9 +1,13 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+const withMT = require("@material-tailwind/react/utils/withMT");
+
+module.exports =withMT({
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/tw-elements-react/dist/js/**/*.js"
+    "./node_modules/tw-elements-react/dist/js/**/*.js",
+    "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -57,11 +61,11 @@ module.exports = {
         darkOverlay: "rgba(0,0,0,0.5)",
         lightOverlay: "rgba(256,256,256,0.2)",
         lighttextGray: "#9ca0ab",
-        card: "#F4EAE0",//
+        card: "#F4EAE0",
         cartItem: "#2e3033",
-        searchb: "#FFFFFF",//
-        bgBasic: "#FAF6F0", //
-        Hcolor:"#F4DFC8",//
+        searchb: "#FFFFFF",
+        bgBasic: "#FAF6F0", 
+        Hcolor:"#F4DFC8",
         cartTotal: "#343739",
         loaderOverlay: "rgba(256,256,256,0.1)",
       },
@@ -70,5 +74,5 @@ module.exports = {
 
   darkMode: "class",
   plugins: [require("tw-elements-react/dist/plugin.cjs")]
-}
+})
 

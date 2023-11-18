@@ -17,7 +17,7 @@ import { actionType } from "../../Context/reducer";
 
 const MediaPlayer = ({ book }) => {
 
-
+  const [isPlayList, setIsPlayList] = useState(false);
   const [{  isAudiobookPlaying}, dispatch] = useStateValue();
   const [currentlyPlaying, setCurrentlyPlaying] = useState(null);
 
@@ -93,7 +93,7 @@ const MediaPlayer = ({ book }) => {
         </p>
         <motion.i
           whileTap={{ scale: 0.8 }}
-          // onClick={() => setIsPlayList(!isPlayList)}
+           onClick={() => setIsPlayList(!isPlayList)}
         >
           <RiPlayListFill className="text-textColor hover:text-headingColor text-3xl cursor-pointer" />
         </motion.i>
@@ -120,6 +120,7 @@ const MediaPlayer = ({ book }) => {
         </motion.i>
       </div>
     </div>
+    
 
     {/* {isPlayList && (
       <>
@@ -144,8 +145,83 @@ const MediaPlayer = ({ book }) => {
         </div>
       </motion.div>
     )} */}
+
+{isPlayList && (
+        <>
+          <PlayListCard />
+        </>
+      )}
   </div>
   )
 }
+
+export const PlayListCard = () => {
+  const [{ allAudiobooks, audiobook, isAudiobookPlaying }, dispatch] = useStateValue();
+ 
+  // useEffect(() => {
+  //   if (!allAudiobooks) {
+  //     getAllAudiobooks().then((data) => {
+  //       dispatch({
+  //         type: actionType.SET_ALL_AUDIOBOOKS,
+  //         allAudiobooks: data.data,
+  //       });
+  //     });
+  //   }
+  // }, []);
+
+  // const setCurrentPlayAudiobook = (audiobookIndex) => {
+  //   if (!isAudiobookPlaying) {
+  //     dispatch({
+  //       type: actionType.SET_AUDIOBOOK_PLAYING,
+  //       isAudiobookPlaying: true,
+  //     });
+  //   }
+  //   if (audiobook !== audiobookIndex) {
+  //     dispatch({
+  //       type: actionType.SET_AUDIOBOOK,
+  //       audiobook: audiobookIndex,
+  //     });
+  //   }
+  // };
+
+  return (
+    <div className="absolute left-4 bottom-24 gap-2 py-2 w-350 max-w-[350px] h-510 max-h-[510px] flex flex-col overflow-y-scroll scrollbar-thin rounded-md shadow-md bg-primary">
+      {allAudiobooks.length > 0 ? (
+        allAudiobooks.map((music, index) => (
+          <motion.div
+            initial={{ opacity: 0, translateX: -50 }}
+            animate={{ opacity: 1, translateX: 0 }}
+            transition={{ duration: 0.1, delay: index * 0.1 }}
+            className={`group w-full p-4 hover:bg-card flex gap-3 items-center cursor-pointer ${
+              music?._id === audiobook._id ? "bg-card" : "bg-transparent"
+            }`}
+            // onClick={() => setCurrentPlayAudiobook(index)}
+          >
+            <IoMusicalNote className="text-textColor group-hover:text-headingColor text-2xl cursor-pointer" />
+
+            <div className="flex items-start flex-col">
+              <p className="text-lg text-headingColor font-semibold">
+                {`${
+                  music?.name.length > 20
+                    ? music?.name.slice(0, 20)
+                    : music?.name
+                }`}{" "}
+                <span className="text-base">({music?.series})</span>
+              </p>
+              <p className="text-textColor">
+                {music?.author}{" "}
+                <span className="text-sm text-textColor font-semibold">
+                  ({music?.genre})
+                </span>
+              </p>
+            </div>
+          </motion.div>
+        ))
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+};
 
 export default MediaPlayer

@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { StateProvider } from "./Context/StateProvider";
 import { initialState } from "./Context/initialState";
 import reducer from "./Context/reducer";
+import { ThemeProvider } from "@material-tailwind/react";
 
 
 
@@ -14,7 +15,9 @@ root.render(
   <React.StrictMode>
     
       <StateProvider initialState={initialState} reducer={reducer}>
+      <ThemeProvider>
         <App />
+        </ThemeProvider>
       </StateProvider>
     
   </React.StrictMode>
