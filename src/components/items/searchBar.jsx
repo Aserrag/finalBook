@@ -21,7 +21,7 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="sticky top-0 z-10">
-      <div className="p-1 md:w-1/2 mx-auto bg-items shadow-xl rounded-full flex items-center bg-searchb">
+      <div className="p-1 md:w-1/2 mx-auto bg-items shadow-xl rounded-full flex items-center bg-buttons">
         <input
           type="text"
           value={searchTerm}
@@ -31,7 +31,7 @@ const SearchBar = ({ onSearch }) => {
           placeholder=" Search..."
         />
         <button
-          className="ml-2 px-4 py-2 text-lg text-white bg-orange-700 rounded-r-full hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+          className="ml-2 px-4 py-2 text-lg text-white bg-Hcolor rounded-r-full hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
           onClick={handleSearch}
         >
           Search

@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../assets/img";
+import Col from "../items/col";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -46,20 +47,15 @@ useEffect(() => {
     <div className="bg-Hcolor">
       <div className="top bg-Hcolor" style={{ position: "absolute", top: "-100px" }} id="top"></div>
 
-      <div className="bg-Hcolor sticky top-0 z-10 m-2">
+      <div className=" sticky top-0 z-10 m-2">
         <Header />
         </div>
-        <div className="bg-Hcolor">
+        <div >
         <SearchBar onSearch={handleSearch} />
       </div>
 
-      <div className="bg-Hcolor pt-8 flex justify-center items-center">
-        <img
-  
-          src={login}
-          alt=""
-          className="w-3/4 h-510"
-        />
+      <div className="bg-Hcolor pt-2 flex justify-center items-center">
+     <Col/>
       </div>
       <div className="bg-Hcolor w-full  flex justify-center items-center ">
       <div className="w-2/4" >

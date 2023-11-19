@@ -71,7 +71,7 @@ const Header = () => {
  
 
   return (
-    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-none px-4 py-2 lg:px-8 lg:py-4">
+    <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-md px-4 py-2 lg:px-8 lg:py-4 bg-card">
     <div className="flex items-center justify-between relative text-black">
     
       <Typography
@@ -80,7 +80,7 @@ const Header = () => {
         href="#"
         className="mr-4 cursor-pointer py-1.5 text-3xl flex flex-row items-center"
       >
-        <div><img src={Logo} className='flex flex-row w-20 h-10'></img></div>
+        <div><img src={Logo} className='flex flex-row w-14 h-10'></img></div>
         ITI-Books
       </Typography>
       <div className="flex items-center gap-4">
