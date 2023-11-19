@@ -52,10 +52,13 @@ const MediaPlayer = ({ book }) => {
   };
 
   const changeBookPlayer = (newBook) => {
+    console.log("The Play list : " + playlist);
     if (!isAudiobookPlaying) {
+      
       dispatch({
         type: actionType.SET_AUDIOBOOK_PLAYING,
         isAudiobookPlaying: true,
+        
       });
      };
 
@@ -149,7 +152,7 @@ useEffect(() => {
 
               onClickNext={nextTrack}
               onClickPrevious={previousTrack}
-              autoPlay={true}
+              autoPlay={false}
               showSkipControls={true}
             />
           )}
