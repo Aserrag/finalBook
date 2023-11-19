@@ -9,26 +9,35 @@ import { Button } from "@material-tailwind/react";
 const Card = ({ book }) => {
   const {id, poster, title, summary, isRecommended, chapters ,author,bookCover} = book;
   const navigate = useNavigate();
-
   const [{ isAudiobookPlaying }, dispatch] = useStateValue();
-  const [isHovered, setIsHovered] = useState(false);
-  const [clickedBooks, setClickedBooks] = useState([]); // Array to store clicked books
+  const [isHovered, setIsHovered] = useState(false);  
   const [currentlyPlayingBook, setCurrentlyPlayingBook] = useState(null);
 
 
   const startPlayer = () => {
-    if (!isAudiobookPlaying && currentlyPlayingBook !== book) {
+    if (!isAudiobookPlaying ) {
       // Add the clicked book to the array
       dispatch({
         type: actionType.SET_AUDIOBOOK_PLAYING,
         isAudiobookPlaying: true,
-        bookData: book,
+        
       });
+
+      // Add the book to the playlist
       dispatch({
         type: actionType.ADD_TO_PLAYLIST,
         book: book,
       });
       setCurrentlyPlayingBook(book);
+    }
+
+    if (isAudiobookPlaying ) {
+
+      dispatch({
+        type: actionType.ADD_TO_PLAYLIST,
+        book: book,
+      });
+      
     }
 
 

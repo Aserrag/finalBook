@@ -92,7 +92,7 @@ const reducer = (state, action) => {
       return {
         ...state,
         isAudiobookPlaying: action.isAudiobookPlaying,
-        currentlyPlayingBook: action.bookData,
+        currentlyPlayingBook: action.book,
       };
     case actionType.REMOVE_FROM_PLAYLIST:
         console.log('Removing from playlist:', action.book.id);
