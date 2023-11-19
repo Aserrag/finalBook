@@ -59,12 +59,21 @@ const MediaPlayer = ({ book }) => {
       });
      };
 
+     if (isAudiobookPlaying) {
+      dispatch({
+        type: actionType.SET_AUDIOBOOK_PLAYING,
+        isAudiobookPlaying: true,
+      });
+     };
+
      if (book !== newBook) {
       dispatch({
-        type: actionType.SET_AUDIOBOOK,
+        type: actionType.SET_AUDIOBOOK_PLAYING,
         book: newBook,
       });
     }
+
+
 
   
 
@@ -137,7 +146,7 @@ useEffect(() => {
             <AudioPlayer
               src={audioUrl}
               onPlay={() => console.log("Audio is playing")}
-              onPause={() => dispatch({ isAudiobookPlaying: false })}
+
               onClickNext={nextTrack}
               onClickPrevious={previousTrack}
               autoPlay={true}
