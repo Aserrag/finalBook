@@ -14,6 +14,7 @@ export const actionType = {
   SET_MINI_PLAYER: "SET_MINI_PLAYER",
   REMOVE_FROM_PLAYLIST: 'REMOVE_FROM_PLAYLIST',
   ADD_TO_PLAYLIST: "ADD_TO_PLAYLIST",
+  PAUSE_AUDIOBOOK:"PAUSE_AUDIOBOOK",
   isAudiobookPlaying: false,
   currentBook: null,
 };
@@ -27,6 +28,14 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+
+      case actionType.PAUSE_AUDIOBOOK:
+        return {
+          ...state,
+          isAudiobookPlaying: action.isAudiobookPlaying,
+          pausedBook: state.currentlyPlayingBook,
+          currentlyPlayingBook: null,
+        };
 
     case actionType.SET_ALL_USERS:
       return {

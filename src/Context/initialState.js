@@ -13,7 +13,7 @@ export const initialState = {
     isAudiobookPlaying: false,
     miniPlayer: false,
     currentlyPlayingBook : null,
-    
+    pausedBook: null,
     playlist: []
     
   };

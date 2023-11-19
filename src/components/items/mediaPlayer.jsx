@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // musicPlayer.jsx
 
 import React, { useEffect, useState } from 'react';
@@ -10,69 +11,102 @@ import 'react-h5-audio-player/lib/styles.css';
 import { useStateValue } from '../../Context/StateProvider';
 import { actionType } from '../../Context/reducer';
 
+
 const MediaPlayer = ({ book }) => {
   const [isPlayList, setIsPlayList] = useState(false);
-  const [{ isAudiobookPlaying }, dispatch] = useStateValue();
+  const [{ isAudiobookPlaying, pausedBook, playlist  }, dispatch] = useStateValue();
   const [currentlyPlayingBook, setCurrentlyPlayingBook] = useState(null);
-  const [{ playlist }] = useStateValue();
 
   const { title, author, poster, audioUrl } = book;
-
-  const onClickNext = () => {
-    dispatch({ type: 'NEXT_AUDIOBOOK' });
-  };
-
-  useEffect(() => {
-    console.log('Component mounted with book prop:', book);
-    return () => {
-      console.log('Component unmounted');
-    };
-  }, [book]);
 
   useEffect(() => {
     if (!book || typeof book !== 'object') {
       return;
     }
 
-    setCurrentlyPlayingBook(book);
-    dispatch({ type: 'SET_AUDIOBOOK_PLAYING', isAudiobookPlaying: true, bookData: book });
+    if (pausedBook) {
+      setCurrentlyPlayingBook(pausedBook);
+      dispatch({
+        type: actionType.PAUSE_AUDIOBOOK,
+        isAudiobookPlaying: false,
+      });
+    } else {
+      setCurrentlyPlayingBook(book);
+      dispatch({
+        type: actionType.SET_AUDIOBOOK_PLAYING,
+        isAudiobookPlaying: true,
+        bookData: book,
+      });
+    }
 
-  }, [book]);
+  }, [book, pausedBook, dispatch]);
 
   const closeMusicPlayer = () => {
     if (isAudiobookPlaying) {
       dispatch({
-        type: 'SET_AUDIOBOOK_PLAYING',
+        type: actionType.SET_AUDIOBOOK_PLAYING,
         isAudiobookPlaying: false,
       });
-      setCurrentlyPlayingBook(null);
+
     }
   };
 
-  const changeBookPlayer = (book) => {
-
-    if (isAudiobookPlaying) {
-      
+  const changeBookPlayer = (newBook) => {
+    if (!isAudiobookPlaying) {
       dispatch({
-        type: 'SET_AUDIOBOOK_PLAYING',
+        type: actionType.SET_AUDIOBOOK_PLAYING,
         isAudiobookPlaying: true,
-       
       });
+     };
 
-      setCurrentlyPlayingBook(book);
+     if (book !== newBook) {
+      dispatch({
+        type: actionType.SET_AUDIOBOOK,
+        book: newBook,
+      });
     }
 
+  
 
 
+}
+
+const nextTrack = () => {
+  if (book > playlist.length) {
+    dispatch({
+      type: actionType.SET_AUDIOBOOK,
+      book: 0,
+    });
+  } else {
+    dispatch({
+      type: actionType.SET_AUDIOBOOK,
+      book: book + 1,
+    });
   }
+};
 
-  if (!book || typeof book !== 'object') {
-    return (
-      <div>
-        <p>No book data available</p>
-      </div>
-    );
+const previousTrack = () => {
+  if (book === 0) {
+    dispatch({
+      type: actionType.SET_AUDIOBOOK,
+      book: 0,
+    });
+  } else {
+    dispatch({
+      type: actionType.SET_AUDIOBOOK,
+      book: book - 1,
+    });
   }
+};
+
+useEffect(() => {
+  if (book > playlist.length) {
+    dispatch({
+      type: actionType.SET_AUDIOBOOK,
+      book: 0,
+    });
+  }
+}, [book]);
 
   return (
     <div className="w-full full items-center gap-3 overflow-hidden">
@@ -104,20 +138,21 @@ const MediaPlayer = ({ book }) => {
               src={audioUrl}
               onPlay={() => console.log("Audio is playing")}
               onPause={() => dispatch({ isAudiobookPlaying: false })}
-              onClickNext={() => dispatch({ isAudiobookPlaying: false })}
-              autoPlay={false}
+              onClickNext={nextTrack}
+              onClickPrevious={previousTrack}
+              autoPlay={true}
               showSkipControls={true}
             />
           )}
         </div>
         <div className="h-full flex items-center justify-center flex-col gap-3">
-          <motion.i whileTap={{ scale: 0.8 }} onClick={closeMusicPlayer}>
-            <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
-          </motion.i>
-          <motion.i whileTap={{ scale: 0.8 }} onClick={onClickNext}>
-            <IoArrowRedo className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
-          </motion.i>
-        </div>
+        <motion.i whileTap={{ scale: 0.8 }} onClick={closeMusicPlayer}>
+          <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
+        </motion.i>
+        <motion.i whileTap={{ scale: 0.8 }} >
+          <IoArrowRedo className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
+        </motion.i>
+      </div>
       </div>
 
       
@@ -135,14 +170,7 @@ const MediaPlayer = ({ book }) => {
                     ? "bg-card"
                     : "bg-transparent"
                 }`}
-                onClick={() => {
-                  dispatch({
-                    type: 'SET_AUDIOBOOK_PLAYING',
-                    isAudiobookPlaying: true,
-                    bookData: audiobook,
-                  });
-                  setCurrentlyPlayingBook(audiobook);
-                }}
+                onClick={() => changeBookPlayer(audiobook)}
               >
                 <IoMusicalNote className="text-textColor group-hover:text-headingColor text-2xl cursor-pointer" />
 
@@ -152,11 +180,11 @@ const MediaPlayer = ({ book }) => {
                       audiobook?.title.length > 20
                         ? audiobook?.title.slice(0, 20)
                         : audiobook?.title
-                    }`}{" "}
+                    }`}{' '}
                     <span className="text-base">({audiobook?.author})</span>
                   </p>
                   <p className="text-textColor">
-                    {audiobook?.author}{" "}
+                    {audiobook?.author}{' '}
                     <span className="text-sm text-textColor font-semibold">
                       ({audiobook?.rate})
                     </span>
