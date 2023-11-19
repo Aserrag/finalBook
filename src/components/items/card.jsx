@@ -55,11 +55,11 @@ const Card = ({ book }) => {
 
   return (
     <div
-      className="max-w-xs w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 mx-auto mb-8"
+      className="max-w-xs w-full  md:w-1/2 lg:w-1/3 xl:w-600  p-4 mx-auto mb-8"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="bg-card border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="bg-card border border-gray-200 rounded-lg  shadow dark:bg-gray-800 dark:border-gray-700">
         <a>
           <img
             className="h-64 w-full object-cover rounded-t-lg"

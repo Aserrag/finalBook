@@ -14,9 +14,9 @@ const BookList = ({ selectedType, searchTerm }) => {
   });
 
   return (
-    <div className="flex flex-wrap justify-center lg:justify-start">
+    <div className="flex flex-wrap justify-center lg:justify-start ">
       {filteredBooks.map((book, index) => (
-        <Card key={index} book={book} className="m-2 lg:m-4" />
+        <Card key={index} book={book} className="m-2 lg:m-4 " />
       ))}
     </div>
   );
