@@ -69,6 +69,7 @@ module.exports =withMT({
         cartTotal: "#343739",
         buttons : "#FD725B",
         loaderOverlay: "rgba(256,256,256,0.1)",
+        facebook: "#3b5998"
       },
     },
   },
