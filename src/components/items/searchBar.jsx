@@ -8,9 +8,7 @@ const SearchBar = ({ onSearch }) => {
     onSearch(searchTerm);
   };
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
-  };
+
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
@@ -21,14 +19,14 @@ const SearchBar = ({ onSearch }) => {
 
   return (
     <div className="sticky top-0 z-10">
-      <div className="p-1 md:w-1/2 mx-auto bg-items shadow-xl rounded-full flex items-center bg-buttons">
+      <div className="p-1 md:w-1/2 mx-auto bg-items shadow-xl rounded-full flex items-center bg-card       ">
         <input
           type="text"
           value={searchTerm}
-          onChange={handleChange}
+          onChange={(e)=>{setSearchTerm(e.target.value);}}
           onKeyDown={handleKeyDown}
           className="w-full h-full bg-transparent text-lg text-textColor border-none outline-none"
-          placeholder=" Search..."
+          placeholder="        Search..."
         />
         <button
           className="ml-2 px-4 py-2 text-lg text-white bg-Hcolor rounded-r-full hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-blue-300"

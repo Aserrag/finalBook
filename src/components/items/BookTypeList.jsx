@@ -4,15 +4,23 @@ import BookType from './BookType';
 import './booktypestyle.css';
 const BookTypesList = ({ onTypeSelect }) => {
   const bookTypes = [
-    { type: 'All', icon: '📚' },
-    { type: 'Drama', icon: '🎭' },
-    { type: 'Fiction', icon: '📖' },
-    { type: 'Fantasy', icon: '📷' },
+    { type: 'All',
+    //  icon: '📚' 
+    },
+    { type: 'Drama',
+    //  icon: '🎭' 
+    },
+    { type: 'Fiction', 
+    // icon: '📖' 
+  },
+    { type: 'Fantasy', 
+    // icon: '📷'
+   },
      
   ];
 
   return (
-      <div className="book-types-list   rounded-full w-full bg-bgbasic ">
+      <div className="flex gap-40 cursor-pointer justify-center  rounded-full w-full bg-card   p-5 text-white font-bold text-lg mt-10 mb-5">
       {bookTypes.map((bookType) => (
         <BookType
           key={bookType.type}

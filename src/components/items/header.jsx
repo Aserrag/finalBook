@@ -1,5 +1,5 @@
-import React from 'react';
-import { Logo } from '../../assets/img';
+import React, { useState } from 'react';
+import { Logo,logoSm } from '../../assets/img';
 
 import {
   Navbar,
@@ -10,12 +10,19 @@ import {
   Card,
 } from "@material-tailwind/react";
 import { useNavigate } from 'react-router-dom';
+import SearchBar from './searchBar';
+
 
 
 const Header = () => {
   const [openNav, setOpenNav] = React.useState(false);
   const navigate = useNavigate();
+  const [searchTerm, setSearchTerm] = useState('');
 
+ 
+    const  handleSearch = (term) => {
+    setSearchTerm(term);
+  };
 
   React.useEffect(() => {
     window.addEventListener(
@@ -24,7 +31,7 @@ const Header = () => {
     );
   }, []);
   const navList = (
-    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 text-white">
       
       <Typography
         as="li"
@@ -32,7 +39,7 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center text-white">
           Pages
         </a>
       </Typography>
@@ -42,7 +49,7 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center text-white">
           Account
         </a>
       </Typography>
@@ -52,7 +59,7 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center text-white">
           Blocks
         </a>
       </Typography>
@@ -62,7 +69,7 @@ const Header = () => {
         color="blue-gray"
         className="p-1 font-normal"
       >
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center text-white">
           Docs
         </a>
       </Typography>
@@ -72,17 +79,20 @@ const Header = () => {
 
   return (
     <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-md px-4 py-2 lg:px-8 lg:py-4 bg-card">
-    <div className="flex items-center justify-between relative text-black">
+    <div className="flex items-center justify-between relative text-white">
     
       <Typography
         onClick={()=> navigate("/home")}
         as="a"
         href="#"
-        className="mr-4 cursor-pointer py-1.5 text-3xl flex flex-row items-center"
+        className="mr-4 cursor-pointer py-1.5 text-3xl flex flex-row items-center gap-4"
       >
-        <div><img src={Logo} className='flex flex-row w-14 h-10'></img></div>
+        <div><img src={logoSm} className='flex flex-row w-14 h-12'></img></div>
         ITI-Books
       </Typography>
+
+     
+
       <div className="flex items-center gap-4">
         <div className="mr-4 hidden lg:block">{navList}</div>
         <div className="flex items-center gap-x-1">
@@ -91,19 +101,19 @@ const Header = () => {
             size="sm"
             className="hidden lg:inline-block"
           >
-            <span>Log In</span>
+            <span className='text-white'>Log In</span>
           </Button>
           <Button
             variant="gradient"
             size="sm"
             className="hidden lg:inline-block"
           >
-            <span>Sign in</span>
+            <span className='text-white'>Sign in</span>
           </Button>
         </div>
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto h-6 w-6 text-white hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >
@@ -143,7 +153,7 @@ const Header = () => {
     <MobileNav open={openNav}>
       {navList}
       <div className="flex items-center gap-x-1">
-        <Button fullWidth variant="text" size="sm" className="">
+        <Button fullWidth variant="text" size="sm" className=" bg-white">
           <span>Log In</span>
         </Button>
         <Button fullWidth variant="gradient" size="sm" className="">

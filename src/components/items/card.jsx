@@ -69,7 +69,7 @@ const Card = ({ book }) => {
         </a>
         <div className="p-4">
           <a>
-            <h5 className="mb-4 text-lg font-bold tracking-tight text-gray-900 dark:text-white">
+            <h5 className="mb-4 text-lg font-bold tracking-tight text-white dark:text-white">
               {title}
             </h5>
           </a>

@@ -5,3 +5,7 @@ export {default as login} from "./login.jpg"
 export {default as login2} from "./login-2.jpg"
 export {default as logoimg} from "./logo-img.png"
 export {default as logoSm} from "./sm-logo.png"
+export {default as slider1} from "./slider2.png"
+export {default as slider2} from "./slider1.png"
+export {default as slider3} from "./slider3.png"
+
