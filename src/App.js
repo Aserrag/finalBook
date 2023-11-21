@@ -4,6 +4,8 @@ import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/items/header";
+import Bookpage from './components/pages/bookpage';
+
 
 
 
@@ -26,8 +28,10 @@ function App() {
             <Route path='/home' element={<Home/>} />
             <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/bookinfo/:bookId' element={<BookInfo />} />
+            {/* <Route path='/bookinfo/:bookId' element={<BookInfo />} /> */}
+            <Route path='/Bookpage' element={<Bookpage />} />
             <Route path='/profile' element={<Profile />} />
+
 
             {/* <Route path="/userProfile" element={<UserProfile />} /> */}
           </Routes>
