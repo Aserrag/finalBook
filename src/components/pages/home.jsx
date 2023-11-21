@@ -45,10 +45,10 @@ useEffect(() => {
 
   return (
     <div className="bg-Hcolor">
-      <div className="top bg-Hcolor" style={{ position: "absolute", top: "-100px" }} id="top"></div>
+      <div className="top bg-Hcolor"  id="top"></div>
 
       <div className=" sticky top-0 z-10 m-2">
-        <Header />
+        {/* <Header /> */}
         </div>
         <div >
         <SearchBar onSearch={handleSearch} />
