@@ -1,8 +1,9 @@
-import { Home, Library, Login,SignUp,BookInfo } from "./components/pages";
+import { Home, Library, Login,SignUp,BookInfo, Profile  } from "./components/pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
 import { motion, AnimatePresence } from "framer-motion";
+import Header from "./components/items/header";
 
 
 
@@ -14,6 +15,7 @@ function App() {
 
   return (
     <Router>
+      <Header/>
     <div className="h-auto flex items-center justify-center min-w-[680px] bg-Hcolor">
       <div className="w-full h-full flex flex-col justify-center text-center  bg-Hcolor">
         
@@ -25,12 +27,14 @@ function App() {
             <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/bookinfo/:bookId' element={<BookInfo />} />
+            <Route path='/profile' element={<Profile />} />
+
             {/* <Route path="/userProfile" element={<UserProfile />} /> */}
           </Routes>
           </section>
       </div>
 
-      {isAudiobookPlaying && (
+      {/* {isAudiobookPlaying && (
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -39,7 +43,7 @@ function App() {
         >
           <MediaPlayer book={bookData}  />
         </motion.div>
-      )}
+      )} */}
 
       
     </div>
