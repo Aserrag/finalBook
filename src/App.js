@@ -3,21 +3,13 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
 import { motion, AnimatePresence } from "framer-motion";
-import { useStateValue } from "./Context/StateProvider";
-import { useEffect } from "react";
-import { NavLink, useNavigate } from 'react-router-dom';
+
 
 
 
 function App() {
   
-   const [{ isAudiobookPlaying, bookData }, dispatch] = useStateValue();
-  //  const navigate = useNavigate();
 
-  //  useEffect(() => {
-  //   if (window.localStorage.getItem("auth") === "true")
-  //     navigate("/home", { replace: true });
-  // }, []);
 
 
   return (
@@ -38,7 +30,7 @@ function App() {
           </section>
       </div>
 
-      {/* {isAudiobookPlaying && (
+      {isAudiobookPlaying && (
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -47,7 +39,7 @@ function App() {
         >
           <MediaPlayer book={bookData}  />
         </motion.div>
-      )} */}
+      )}
 
       
     </div>

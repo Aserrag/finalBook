@@ -7,43 +7,15 @@ import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@material-tailwind/react";
 
 const Card = ({ book }) => {
-  const {id, poster, title, summary, isRecommended, chapters ,author,bookCover} = book;
+  const { id, poster, title, summary, chapters, author, bookCover } = book;
   const navigate = useNavigate();
   const [{ isAudiobookPlaying }, dispatch] = useStateValue();
-  const [isHovered, setIsHovered] = useState(false);  
+  const [isHovered, setIsHovered] = useState(false);
   const [currentlyPlayingBook, setCurrentlyPlayingBook] = useState(null);
 
 
-  const startPlayer = () => {
-    if (!isAudiobookPlaying ) {
-      // Add the clicked book to the array
-      dispatch({
-        type: actionType.SET_AUDIOBOOK_PLAYING,
-        isAudiobookPlaying: true,
-        
-      });
-
-      // Add the book to the playlist
-      dispatch({
-        type: actionType.ADD_TO_PLAYLIST,
-        book: book,
-      });
-      setCurrentlyPlayingBook(book);
-    }
-
-    if (isAudiobookPlaying ) {
-
-      dispatch({
-        type: actionType.ADD_TO_PLAYLIST,
-        book: book,
-      });
-      
-    }
 
 
-
-    
-  };
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -73,21 +45,22 @@ const Card = ({ book }) => {
               {title}
             </h5>
           </a>
-          {isHovered && ( 
+          {isHovered && (
             <div className="flex justify-start flex-col gap-2">
               {/* <Link  to={{
                 pathname:`/bookinfo/${id}`,
                 search: `?book=${book}`,
                  }} 
                  params>Read more</Link> */}
-                 <Button onClick={()=>{
-                  navigate(`/bookinfo/${id}`,{
-                    state:{
-                      poster,title,summary,author,bookCover
-                    }
-                  } ) }}>Read More</Button>
+              <Button onClick={() => {
+                navigate(`/bookinfo/${id}`, {
+                  state: {
+                    poster, title, summary, author, bookCover
+                  }
+                })
+              }}>Read More</Button>
               <span className="mx-2"></span>
-              <Button  onClick={startPlayer}>
+              <Button onClick={()=> setCurrentlyPlayingBook(book.id)}>
                 Listen
               </Button>
             </div>
@@ -104,7 +77,6 @@ const Card = ({ book }) => {
           )}
           {chapters && chapters.length > 0 && (
             <div className="mt-4">
-              {/* Add the chapters section if needed */}
             </div>
           )}
         </div>
