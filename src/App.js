@@ -17,19 +17,20 @@ function App() {
 
   return (
     <Router>
-      <Header/>
+      
     <div className="h-auto flex items-center justify-center min-w-[680px] bg-Hcolor">
       <div className="w-full h-full flex flex-col justify-center text-center  bg-Hcolor">
-        
+      <Header/>
       <section>
           <Routes>
 
             <Route path='/*' element={<Login />} />
+            
             <Route path='/home' element={<Home/>} />
             <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
             {/* <Route path='/bookinfo/:bookId' element={<BookInfo />} /> */}
-            <Route path='/Bookpage' element={<Bookpage />} />
+            <Route path='/Bookpage/:bookId' element={<Bookpage />} />
             <Route path='/profile' element={<Profile />} />
 
 

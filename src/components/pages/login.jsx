@@ -52,7 +52,7 @@ const Login = () => {
   }, [navigate]);
 
   return (
-    <section className='flex h-screen w-screen justify-center bg-Hcolor   bg-no-repeat bg-center bg-[length:100%_100%] '
+    <section className='flex h-screen w-screen justify-center bg-white   bg-no-repeat bg-center bg-[length:100%_100%] '
     // style={{ backgroundImage: `url(${login})` }}
     >
       <div className="container h-full px-6 py-24 ">
@@ -67,12 +67,12 @@ const Login = () => {
           </div>
 
           {/* <!-- Right column container with form --> */}
-          <div className="md:w-8/12 lg:ml-6 lg:w-5/12 p-10 shadow-2xl shadow-black bg-card rounded-3xl text-white ">
-            <div className='text-2xl pb-16  font-bold text-buttons flex justify-center items-center gap-5 '>
+          <div className="md:w-8/12 lg:ml-6  lg:w-5/12 p-10 shadow-2xl shadow-black bg-white rounded-3xl text-white ">
+            <div className='text-2xl pb-16  font-bold text-card flex justify-center items-center gap-5 '>
               <span><img className='h-30 w-20 flex justify-center' src={logoSm}></img> </span>
               Sign in</div>
 
-            <form className="mb-8">
+            <form className="mb-8 text-black">
               {/* <!-- Email input --> */}
               <TEInput
                 name='email'
@@ -126,7 +126,7 @@ const Login = () => {
                 <button
                 onClick={onLogin}
                   type="button"
-                  className="inline-block w-full rounded bg-buttons px-7 pb-2.5 pt-3 text-lg font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
+                  className="inline-block w-full rounded bg-buttons   px-7 pb-2.5 pt-3 text-lg font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-primary-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-primary-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-primary-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                 >
                   Sign in
                 </button>

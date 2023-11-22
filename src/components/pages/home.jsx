@@ -48,9 +48,9 @@ useEffect(() => {
       <div className="top bg-Hcolor" style={{ position: "absolute", top: "-100px" }} id="top"></div>
 
  
-        <div >
+        {/* <div >
         <SearchBar onSearch={handleSearch} />
-      </div>
+        </div> */}
 
       <div className="bg-Hcolor pt-2 flex justify-center items-center">
      <Col/>
