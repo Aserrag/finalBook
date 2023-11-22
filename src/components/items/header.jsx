@@ -156,7 +156,7 @@ import { TimeToLeave } from '@mui/icons-material';
 //   );
 // }
 
-const Header = ({searchTerm}) => {
+const Header = () => {
   const navigate = useNavigate();
 
 
@@ -168,7 +168,7 @@ const Header = ({searchTerm}) => {
       </Navbar.Brand>
       <div className="flex md:order-1 pr-16 ">
         <div className='pr-28'>
-        <SearchBar searchTerm={searchTerm} />
+        <SearchBar  />
 
         </div>
         <Dropdown

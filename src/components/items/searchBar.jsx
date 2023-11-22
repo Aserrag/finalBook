@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSearch = () => {
     // Pass the search term to the parent component
-    onSearch(searchTerm);
+  // onSearch(searchTerm);
   };
 
 

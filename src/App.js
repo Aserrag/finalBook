@@ -1,46 +1,43 @@
-import { Home, Library, Login,SignUp,BookInfo, Profile  } from "./components/pages";
+import { Home, Library, Login, SignUp, BookInfo, Profile } from "./components/pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "./components/items/header";
 import Bookpage from './components/pages/bookpage';
-
+import { Provider } from "react-redux";
+import store from "./store";
 
 
 
 
 
 function App() {
-  
 
 
 
   return (
-    <Router>
-      <Header/>
-    <div className="h-auto flex items-center justify-center min-w-[680px] bg-white">
-      <div className="w-full h-full flex flex-col justify-center text-center  bg-white">
-        
-      <section>
-          <Routes>
+    <Provider store={store}>
+      <Router>
+        <Header />
+        <div className="h-auto flex items-center justify-center min-w-[680px] bg-white">
+          <div className="w-full h-full flex flex-col justify-center text-center  bg-white">
+            <section>
+              <Routes>
+                <Route path='/*' element={<Login />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='/library' element={<Library />} />
+                <Route path='/signup' element={<SignUp />} />
+                {/* <Route path='/bookinfo/:bookId' element={<BookInfo />} /> */}
+                <Route path='/Bookpage/:bookId' element={<Bookpage />} />
+                <Route path='/profile' element={<Profile />} />
+                {/* <Route path="/userProfile" element={<UserProfile />} /> */}
+              </Routes>
+            </section>
+          </div>
 
-            <Route path='/*' element={<Login />} />
-            <Route path='/home' element={<Home/>} />
-            <Route path='/library' element={<Library />} />
-            <Route path='/signup' element={<SignUp />} />
-            {/* <Route path='/bookinfo/:bookId' element={<BookInfo />} /> */}
-            <Route path='/Bookpage/:bookId' element={<Bookpage />} />
-            <Route path='/profile' element={<Profile />} />
 
-
-            {/* <Route path="/userProfile" element={<UserProfile />} /> */}
-          </Routes>
-          </section>
-      </div>
-
-      
-        {/* <motion.div
+          {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
@@ -50,9 +47,10 @@ function App() {
         </motion.div>
      */}
 
-      
-    </div>
-    </Router>
+
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

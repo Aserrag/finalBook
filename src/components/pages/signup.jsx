@@ -6,9 +6,10 @@ import { TEInput, TERipple } from 'tw-elements-react'
 import { logoSm } from '../../assets/img';
 import { Label, TextInput } from 'flowbite-react';
 
+
 const Signup = ({isDone2}) => {
     const navigate = useNavigate();
-
+ const [data, setData] = useState(null);
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('');
@@ -32,9 +33,12 @@ const Signup = ({isDone2}) => {
                 console.log(errorCode, errorMessage);
                 // ..
             });
-
-
     }
+
+
+
+    
+
 
     return (
 

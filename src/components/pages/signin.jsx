@@ -6,9 +6,10 @@ import { TEInput, TERipple } from 'tw-elements-react'
 import { auth, provider } from '../../firebase'
 import { logoSm } from '../../assets/img';
 import { Label, TextInput } from 'flowbite-react';
-
+import {login} from '../../actions/auth'
+import { connect } from 'react-redux';
  
-const SignIn = () => {
+const SignIn = ({login}) => {
     const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -17,34 +18,24 @@ const SignIn = () => {
 
   const onLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in
-        window.localStorage.setItem("auth", true);
-        const user = userCredential.user;
-        navigate("/home")
-        console.log(user);
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-    });
+    // signInWithEmailAndPassword(auth, email, password)
+    // .then((userCredential) => {
+    //     // Signed in
+    //     window.localStorage.setItem("auth", true);
+    //     const user = userCredential.user;
+    //     navigate("/home")
+    //     console.log(user);
+    // })
+    // .catch((error) => {
+    //     const errorCode = error.code;
+    //     const errorMessage = error.message;
+    //     console.log(errorCode, errorMessage)
+    // });
+    login(email,password);
    
 }
 
 
-  const loginWithGoogle = async () => {
-    try {
-      const userCred = await auth.signInWithPopup(provider);
-      if (userCred) {
-        window.localStorage.setItem("auth", true);
-        navigate("/home", { replace: true });
-      }
-    } catch (error) {
-      alert(error.message);
-    }
-  };
 
   useEffect(() => {
     if (window.localStorage.getItem("auth") === "true")
@@ -106,4 +97,4 @@ const SignIn = () => {
   )
 }
  
-export default SignIn
+export default connect(null,{login}) (SignIn); 
