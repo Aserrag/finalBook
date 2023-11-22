@@ -3,6 +3,7 @@ import { Logo, logoSm } from '../../assets/img';
 import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import SearchBar from './searchBar';
 import { Link, useNavigate } from "react-router-dom";
+import { TimeToLeave } from '@mui/icons-material';
 
 // const Header = () => {
 //   const [openNav, setOpenNav] = React.useState(false);
@@ -186,7 +187,7 @@ const Header = ({searchTerm}) => {
           <Dropdown.Item>Settings</Dropdown.Item>
           <Dropdown.Item>Earnings</Dropdown.Item>
           <Dropdown.Divider />
-          <Dropdown.Item>Sign out</Dropdown.Item>
+          <Dropdown.Item onClick={()=>{ window.localStorage.clear();  navigate('/login')}}>Sign out</Dropdown.Item>
         </Dropdown>
         <Navbar.Toggle />
       </div>
