@@ -9,7 +9,7 @@ import { Carousel } from 'flowbite-react';
 function Col() {
     return (
         <div className="h-56 sm:h-64 xl:h-80 2xl:h-685">
-        <Carousel slideInterval={5000}>
+        <Carousel slideInterval={2000}>
           <img src={slider1} alt="..." />
           <img src={slider2} alt="..." />
           <img src={slider3} alt="..." />

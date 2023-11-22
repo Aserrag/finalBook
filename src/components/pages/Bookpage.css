@@ -33,9 +33,14 @@ transform: scale(0.95)
 .previous:hover i {
   color: #fff;
 }
-.othericons i{
-  background-color: transparent;
-  color: var(--theme-color)
+.heart , .bookmark , .chat{
+  background-color: #f2f5f8;
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 22px;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 .othericons i:hover {
   background-color: #e0e0e0;
@@ -52,12 +57,13 @@ transform: scale(0.95)
   .contimg .img  {
    height: 400px;
     display: flex;
+    
     justify-content: center    
   }
   .contimg .img img {
-    height: 100%;
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
     width: 100%;
-    object-fit: contain
   }
   .booktitle {
     background-color: #fff;
