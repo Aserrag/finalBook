@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { login } from "../../assets/img";
 import Col from "../items/col";
 
+
 const Home = () => {
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState('All');
@@ -44,21 +45,24 @@ useEffect(() => {
   };
 
   return (
-    <div className="bg-Hcolor">
-      <div className="top bg-Hcolor" style={{ position: "absolute", top: "-100px" }} id="top"></div>
+    <div className="bg-white">
+      <div className="top bg-white" style={{ position: "absolute", top: "-100px" }} id="top"></div>
 
  
-        <div >
-        <SearchBar onSearch={handleSearch} />
-      </div>
 
-      <div className="bg-Hcolor pt-2 flex justify-center items-center">
+
+      <div className="bg-white pt-2 flex justify-center items-center">
      <Col/>
       </div>
-      <div className="bg-Hcolor w-full  flex justify-center items-center ">
+
+
+      <div className="bg-white w-full  flex flex-col justify-center items-center ">
+      
       <div className="w-2/4" >
-       
       <BookTypesList onTypeSelect={handleTypeSelect}   />
+      </div>
+
+      <div className="w-3/4" >
       <BookList selectedType={selectedType} searchTerm={searchTerm} />
       </div>
       </div>
