@@ -49,7 +49,7 @@ useEffect(() => {
 
  
         <div >
-        <SearchBar onSearch={handleSearch} />
+        {/* <SearchBar onSearch={handleSearch} /> */}
       </div>
 
       <div className="bg-Hcolor pt-2 flex justify-center items-center">

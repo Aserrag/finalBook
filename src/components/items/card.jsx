@@ -53,7 +53,7 @@ const Card = ({ book }) => {
                  }} 
                  params>Read more</Link> */}
               <Button onClick={() => {
-                navigate(`/bookinfo/${id}`, {
+                navigate(`/bookpage/${id}`, {
                   state: {
                     poster, title, summary, author, bookCover
                   }
