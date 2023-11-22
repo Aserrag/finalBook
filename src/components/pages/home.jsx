@@ -8,6 +8,9 @@ import { auth } from "../../firebase";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../assets/img";
 import Col from "../items/col";
+import ColorInversionFooter from "../items/Footer";
+
+
 
 
 const Home = () => {
@@ -65,7 +68,13 @@ useEffect(() => {
       <div className="w-3/4" >
       <BookList selectedType={selectedType} searchTerm={searchTerm} />
       </div>
+
+      <div className="w-[80%] flex justify-center mt-40">
+      <ColorInversionFooter />
       </div>
+
+      </div>
+
     </div>
   );
 };

@@ -36,17 +36,25 @@ function Bookpage() {
       <div className="rightside">
         <div className="contimg">
           <div className="img">
+          <img
+              className="mo5tlf"
+              src="https://edit.org/images/cat/book-covers-big-2019101610.jpg"
+              alt=""
+            />
             <img
               src="https://edit.org/images/cat/book-covers-big-2019101610.jpg"
               alt=""
             />
+ 
           </div>
-          <div className="booktitle">
+   
+
+          {/* <div className="booktitle">
             <h2>Book Title Here</h2>
             <span>
               <strong>Author </strong>Book author here
             </span>
-          </div>
+          </div> */}
         </div>
         <div className="content">
           <h2 style={{ color: "#000", padding: 0, margin: "10px 0" }}>

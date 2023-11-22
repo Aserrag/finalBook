@@ -21,20 +21,24 @@ const BookTypesList = ({ onTypeSelect }) => {
   ];
 
   return (
-    <div className='bg-card mt-5 p-5 w-[100%] '>
-        <div className='flex justify-center text-white text-5xl font-bold '>Category</div>
-      <div className="flex flex-row gap-4  md:w-1/2 lg:w-1/3 xl:w-600  p-4 mx-auto mb-8 mt-4 bg-card justify-center ">
-      {bookTypes.map((bookType) => (
+<div className='bg-card mt-5 p-5 w-[100%] h-[350px]'>
+  <div className='flex justify-center text-white text-5xl font-bold '>Category</div>
+  <div className="flex flex-wrap justify-center gap-4 p-4 mx-auto mb-8 mt-4 bg-card">
+    {bookTypes.map((bookType) => (
+      <div key={bookType.type} className="flex flex-col items-center">
         <BookType
-          key={bookType.type}
           type={bookType.type}
           icon={bookType.icon}
           onClick={onTypeSelect}
         />
-      ))}
-    </div>
-    </div>
+        <h1 style={{ color: "white", marginTop: "10px", fontSize: "1.5rem" }}>{bookType.type}</h1>
+      </div>
+    ))}
+  </div>
+</div>
+
   );
+  
 };
 
 export default BookTypesList;

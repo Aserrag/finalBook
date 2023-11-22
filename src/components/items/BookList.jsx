@@ -1,6 +1,7 @@
 import React from 'react';
 import Card from './card';
 import { BookDirectory } from '../data/book';
+import ContainerResponsive from './card';
 
 const BookList = ({ selectedType, searchTerm }) => {
   const bookDirectory = new BookDirectory();
@@ -16,10 +17,11 @@ const BookList = ({ selectedType, searchTerm }) => {
   return (
     <div className="flex flex-wrap justify-center lg:justify-start ">
       {filteredBooks.map((book, index) => (
-        <Card key={index} book={book} className="m-2 lg:m-4 " />
+        <ContainerResponsive key={index} book={book} className="m-2 lg:m-4 " />
       ))}
     </div>
   );
 };
+
 
 export default BookList;
