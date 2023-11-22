@@ -10,7 +10,7 @@ export const initialState = {
     allAuthors: null, 
     seriesFilter: null,
     audiobook: 0,
-    isAudiobookPlaying: false,
+    isAudiobookPlaying: true,
     miniPlayer: false,
     currentlyPlayingBook : null,
     pausedBook: null,

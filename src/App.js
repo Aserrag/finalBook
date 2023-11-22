@@ -17,7 +17,7 @@ function App() {
 
   return (
     <Router>
-      
+      <Header/>
     <div className="h-auto flex items-center justify-center min-w-[680px] bg-Hcolor">
       <div className="w-full h-full flex flex-col justify-center text-center  bg-Hcolor">
       <Header/>
@@ -25,7 +25,6 @@ function App() {
           <Routes>
 
             <Route path='/*' element={<Login />} />
-            
             <Route path='/home' element={<Home/>} />
             <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
@@ -39,16 +38,16 @@ function App() {
           </section>
       </div>
 
-      {/* {isAudiobookPlaying && (
-        <motion.div
+      
+        {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
           className={`fixed min-w-[100px] h-26 inset-x-10 bottom-0 bg-white drop-shadow-2xl backdrop-blur-md rounded-lg`}
         >
-          <MediaPlayer book={bookData}  />
+          <MediaPlayer />
         </motion.div>
-      )} */}
+     */}
 
       
     </div>
