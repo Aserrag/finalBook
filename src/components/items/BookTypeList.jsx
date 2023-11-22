@@ -2,25 +2,28 @@
 import React from 'react';
 import BookType from './BookType';
 import './booktypestyle.css';
+import { drama,fantasy,all,fiction } from '../../assets/img';
 const BookTypesList = ({ onTypeSelect }) => {
   const bookTypes = [
     { type: 'All',
-    //  icon: '📚' 
+     icon: all
     },
     { type: 'Drama',
-    //  icon: '🎭' 
+     icon: drama
     },
     { type: 'Fiction', 
-    // icon: '📖' 
+    icon: fiction
   },
     { type: 'Fantasy', 
-    // icon: '📷'
+    icon: fantasy
    },
      
   ];
 
   return (
-      <div className="flex gap-40 cursor-pointer justify-center  rounded-full w-full bg-card   p-5 text-white font-bold text-lg mt-10 mb-5">
+    <div className='bg-card mt-5 p-5 w-[100%] '>
+        <div className='flex justify-center text-white text-5xl font-bold '>Category</div>
+      <div className="flex flex-row gap-4  md:w-1/2 lg:w-1/3 xl:w-600  p-4 mx-auto mb-8 mt-4 bg-card justify-center ">
       {bookTypes.map((bookType) => (
         <BookType
           key={bookType.type}
@@ -29,6 +32,7 @@ const BookTypesList = ({ onTypeSelect }) => {
           onClick={onTypeSelect}
         />
       ))}
+    </div>
     </div>
   );
 };

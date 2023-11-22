@@ -51,15 +51,15 @@ useEffect(() => {
  
 
 
-      <div className="bg-white pt-2 flex justify-center items-center">
+      <div className="">
      <Col/>
       </div>
 
 
       <div className="bg-white w-full  flex flex-col justify-center items-center ">
       
-      <div className="w-2/4" >
       <BookTypesList onTypeSelect={handleTypeSelect}   />
+      <div className="w-2/4 rounded bg-card mt-4 mb-5 flex  cursor-pointer" >
       </div>
 
       <div className="w-3/4" >
