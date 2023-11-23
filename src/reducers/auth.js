@@ -1,17 +1,19 @@
+/* eslint-disable no-fallthrough */
 import {
     LOGIN_SUCCESS,
     LOGIN_FAIL,
-    USER_LOADED_SUCCESS
+    USER_LOADED_SUCCESS,
+    SIGNUP_FAIL,
+    SIGNUP_SUCCESS
 } from '../actions/types'
 
 const initialState = {
-    username:null,
-    password:null,
-    email:null,
+    favorite: [],
+
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
-export default function(state = initialState, action) {
+export default function (state = initialState, action) {
     const { type, payload } = action;
 
     switch (type) {
@@ -19,7 +21,7 @@ export default function(state = initialState, action) {
             localStorage.setItem('access', payload.access)
             return {
                 ...state,
-                
+
                 access: payload.access,
                 refresh: payload.refresh
             }
@@ -37,6 +39,20 @@ export default function(state = initialState, action) {
                 access: null,
                 refresh: null,
             }
+
+        case SIGNUP_FAIL:
+
+        case SIGNUP_SUCCESS:
+            localStorage.setItem('signup',true)
+            return{
+                ...state,
+                isAuthenticated: true,
+            }
+
+
+
+
+
         default:
             return state;
     }

@@ -19,6 +19,7 @@ function App() {
   return (
     <Provider store={store}>
       <Router>
+       
         <Header />
         <div className="h-auto flex items-center justify-center min-w-[680px] bg-white">
           <div className="w-full h-full flex flex-col justify-center text-center  bg-white">
