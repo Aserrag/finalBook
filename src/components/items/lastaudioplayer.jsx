@@ -32,51 +32,47 @@ export const MediaPlayer = ({ title, author, coverImage, audioSource }) =>
 
 
     return (
-      <div className="w-full mt-16 items-center gap-3 overflow-hidden">
-        <div className={`w-full full items-center gap-3 p-4 flex relative `}>
-          <img
-            src={coverImage}
-            className="w-40 h-20 object-cover rounded-lg"
-            alt=""
-          />
-          <div className="flex items-start flex-col">
-            <p className="text-xl text-headingColor font-semibold">
-              {title}
-              <span className="text-base"></span>
-            </p>
-            <p className="text-textColor">
-              {author}
-              <span className="text-sm text-textColor font-semibold"></span>
-            </p>
-            <motion.i
-              whileTap={{ scale: 0.8 }}
-              onClick={() => setIsPlayList(!isPlayList)}
-            >
-              <RiPlayListFill className="text-textColor hover:text-headingColor text-3xl cursor-pointer" />
-            </motion.i>
-          </div>
-          <div className="flex-1 ">
-            {currentlyPlayingBook && currentlyPlayingBook  && (
-              <AudioPlayer
-                src={audioSource}
-                // onClickNext={}
-                // onClickPrevious={previousTrack}
-                autoPlay={false}
-                showSkipControls={true}
-              />
-            )}
-          </div>
-          <div className="h-full flex items-center justify-center flex-col gap-3">
-            {/* <motion.i whileTap={{ scale: 0.8 }} onClick={closeMusicPlayer}>
-              <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
-            </motion.i> */}
-            <motion.i whileTap={{ scale: 0.8 }} >
-              <IoArrowRedo className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
-            </motion.i>
-          </div>
+      <div className="w-full mt-16 items-center gap-3 overflow-hidden bg-white flex justify-center">
+      <div className={`w-full full items-center gap-3 p-4 flex relative ml-96 `}>
+        <img
+          src={coverImage}
+          className="w-40 h-20 object-cover rounded-lg"
+          alt=""
+        />
+        <div className="flex items-start flex-col">
+          <p className="text-xl text-headingColor font-semibold">
+            {title}
+            <span className="text-base"></span>
+          </p>
+          <p className="text-textColor">
+            {author}
+            <span className="text-sm text-textColor font-semibold"></span>
+          </p>
+          <motion.i
+            whileTap={{ scale: 0.8 }}
+            onClick={() => setIsPlayList(!isPlayList)}
+          >
+            <RiPlayListFill className="text-textColor hover:text-headingColor text-3xl cursor-pointer" />
+          </motion.i>
         </div>
-  
-        
+        <div className="flex-1 ">
+          {currentlyPlayingBook && currentlyPlayingBook && (
+            <AudioPlayer
+              src={audioSource}
+              // onClickNext={}
+              // onClickPrevious={previousTrack}
+              autoPlay={false}
+              showSkipControls={true}
+            />
+          )}
+        </div>
+        <div className="h-full flex items-center justify-center flex-col gap-3">
+          {/* <motion.i whileTap={{ scale: 0.8 }} onClick={closeMusicPlayer}>
+            <IoMdClose className="text-textColor hover:text-headingColor text-2xl cursor-pointer" />
+          </motion.i> */}
+        </div>
       </div>
+    </div>
+    
     );
 }

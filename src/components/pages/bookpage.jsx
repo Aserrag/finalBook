@@ -9,9 +9,12 @@ import { CustomRatingIcon } from "../items/customrating";
 import "./Components/Styles/App.scss";
 import Comment from "./Components/Comment";
 import AddComment from "./Components/AddComment";
+import ReadPage from "./Read";
 
 
 function Bookpage() {
+
+  const [isReading, setIsReading] = useState(false);
 
   const [comments, updateComments] = useState([]);
   const [deleteModalState, setDeleteModalState] = useState(false);
@@ -167,8 +170,22 @@ function Bookpage() {
         
 
         <div className="buttons">
-          <button onClick={() => setIsListening(!isListening)}>Listen</button>
-          <button>Read</button>
+          <button className="listen-btn" onClick={() => setIsListening(!isListening)}>Listen</button>
+
+
+
+         
+            <button
+            className="read-btn"
+              onClick={() => {
+                setIsReading(true);
+                // Use window.open to open ReadPage in a new window or tab
+                window.open("/read", "_blank"); // Update the path to your ReadPage
+              }}
+            >
+              Read
+            </button>
+          
         </div>
       </div>
 
@@ -184,7 +201,11 @@ function Bookpage() {
      
      <CustomRatingIcon />
      </div>
+
+
      <div className="comment">
+     <h2>Comments</h2>
+     <div className="mapping">
       {comments.map((comment) => (
         <Comment
           key={comment.id}
@@ -197,6 +218,7 @@ function Bookpage() {
         />
       ))}
       <AddComment buttonValue={"send"} addComments={addComments} />
+      </div>
     </div>
 
 

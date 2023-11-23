@@ -8,29 +8,28 @@
   border-radius: 26px;
   color: black;
   margin-top: 10%;
-
 }
 
 .leftside {
   flex: 1;
   max-width: 300px;
- 
 }
-.content{
-  
+
+.content {
   margin-top: 20%;
   font-size: 10px;
 }
 
-.rightside  {
+.rightside {
   flex: 1;
   padding: 0 20px;
   margin-top: 5%;
   font-size: 22px;
 }
+
 .rightside h2 {
-color: black;
-font-weight: bold;
+  color: black;
+  font-weight: bold;
 }
 
 .contimg {
@@ -41,18 +40,19 @@ font-weight: bold;
   width: 100%;
   height: auto;
   border-radius: 26px;
-
 }
 
-h2 {
+div h2 {
   color: #000;
   margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
 }
 
 .buttons button {
-  padding-top:3%;
+  padding-top: 3%;
   padding-bottom: 3%;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: bold;
   margin-right: 10px;
   margin-top: 10%;
@@ -62,23 +62,43 @@ h2 {
   color: white;
 }
 
-.rate{
-
+.rate {
   margin-top: 5%;
 }
 
-.comment{
+.comment {
+  width: 100%;
+  margin-top: 5%;
+}
 
+.comment .mapping {
   margin-left: 30%;
-
 }
 
 @media screen and (max-width: 768px) {
   .bookpage {
     flex-direction: column;
+    padding: 10px; /* Adjust padding for smaller screens */
   }
-  
+
+  .leftside,
+  .rightside {
+    max-width: 100%; /* Adjust max-width for smaller screens */
+  }
+
   .rightside {
     order: -1;
+  }
+
+  .buttons button {
+    width: 100%; /* Make buttons full width on smaller screens */
+    margin-top: 5%; 
+    font-weight: bold;
+    
+    /* Adjust margin for smaller screens */
+  }
+
+  .comment .mapping {
+    margin-left: 0; /* Center the comments on smaller screens */
   }
 }

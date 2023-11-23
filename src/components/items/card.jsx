@@ -50,10 +50,10 @@ import { useState } from 'react';
         </CardHeader>
         <CardBody>
           <div className="mb-2 flex items-center justify-between">
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-bold">
               {book.title}
             </Typography>
-            <Typography color="blue-gray" className="font-medium">
+            <Typography color="blue-gray" className="font-bold ">
             {book.author}
             </Typography>
           </div>
@@ -69,7 +69,7 @@ import { useState } from 'react';
           <Button
             ripple={false}
             fullWidth={true}
-            className="bg-black text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
+            className="bg-black font-bold text-xl text-white shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
           onClick={handleCardClick}
           >
             Listen
