@@ -1,21 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {MDBCol,MDBContainer,MDBRow,MDBCard,MDBCardText,MDBCardBody, MDBCardImage,MDBBtn,MDBProgress,MDBProgressBar,MDBIcon,MDBListGroup,MDBListGroupItem} from 'mdb-react-ui-kit';
 import axios from 'axios';
 import PrimarySearchAppBar from '../items/header';
 
+import { useNavigate } from 'react-router-dom';
   
 
 
 
 function Profile() {
-  
+  const [userData, setUserData] = useState({});
+  const navigate = useNavigate();
+
+
+  const navetoprofile = () => {
+    // Redirect to the specified API link
+    window.location.href = 'https://movieproject0001.pythonanywhere.com/admin/auth/user/';
+  };
+  const navetobooks = () => {
+    // Redirect to the specified API link
+    window.location.href = 'https://movieproject0001.pythonanywhere.com/admin/book/books/';
+  };
 
 
   return (
    
-    <div className='shadow-2xl h-screen shadow-black bg-card rounded-3xl '>
+    <div className='shadow-2xl h-screen shadow-black bg-white rounded-3xl '>
     
-    <section className='h-screen bg-card flex justify-center'>
+    <section className='h-screen bg-white flex justify-center'>
          
       <MDBContainer className="py-4 ">
 
@@ -89,8 +101,10 @@ function Profile() {
                 </MDBRow>
               </MDBCardBody>
             </MDBCard>
-
-           
+        <div className='gap-3'>
+            <MDBBtn onClick={navetoprofile} className='m-2'>Users</MDBBtn>
+            <MDBBtn onClick={navetobooks} className='m-2'>Books</MDBBtn>
+            </div>
           </MDBCol>
         </MDBRow>
       </MDBContainer>
