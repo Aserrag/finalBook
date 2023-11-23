@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { login, login2, Logo, logoSm, logoimg } from '../../assets/img'
+import {  login2, Logo, logoSm, logoimg } from '../../assets/img'
 import { ReactDOM } from 'react'
 import { TEInput, TERipple } from 'tw-elements-react'
 import { auth, provider } from '../../firebase'
@@ -15,9 +15,16 @@ import SignIn from './signin'
 
 const Login = () => {
   const navigate = useNavigate();
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isUser, setIsUser] = useState(false);
+
+  const handleRedirect = () => {
+    // Redirect to a new link
+  
+    window.location.href = 'https://movieproject0001.pythonanywhere.com/auth/users/'
+  };
 
   const onLogin = (e) => {
     e.preventDefault();
@@ -89,7 +96,7 @@ const Login = () => {
               {!isUser ? "Sign In ":"Sign Up "}</div>
           
 
-          {!isUser?<SignIn />:<Signup isDone={setIsUser2}/>}
+          {!isUser?<SignIn />:<Signup/>}
 
 
       {/* <!-- Divider --> */}

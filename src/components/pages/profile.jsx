@@ -1,46 +1,21 @@
 import React from 'react'
-import {
-    MDBCol,
-    MDBContainer,
-    MDBRow,
-    MDBCard,
-    MDBCardText,
-    MDBCardBody,
-    MDBCardImage,
-    MDBBtn,
-    MDBBreadcrumb,
-    MDBBreadcrumbItem,
-    MDBProgress,
-    MDBProgressBar,
-    MDBIcon,
-    MDBListGroup,
-    MDBListGroupItem
-  } from 'mdb-react-ui-kit';
-import Header from '../items/header';
+import {MDBCol,MDBContainer,MDBRow,MDBCard,MDBCardText,MDBCardBody, MDBCardImage,MDBBtn,MDBProgress,MDBProgressBar,MDBIcon,MDBListGroup,MDBListGroupItem} from 'mdb-react-ui-kit';
+import axios from 'axios';
+
   
 
 
 
 function Profile() {
+  
+
+
   return (
     <div className='shadow-2xl h-screen shadow-black bg-card rounded-3xl '>
     {/* <Header /> */}
     <section className='h-screen bg-card flex justify-center'>
          
       <MDBContainer className="py-4 ">
-        <MDBRow>
-          {/* <MDBCol>
-            <MDBBreadcrumb className="bg-light rounded-3 p-3 mb-4">
-              <MDBBreadcrumbItem>
-                <a href='#'>Home</a>
-              </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem>
-                <a href="#">User</a>
-              </MDBBreadcrumbItem>
-              <MDBBreadcrumbItem active>User Profile</MDBBreadcrumbItem>
-            </MDBBreadcrumb>
-          </MDBCol> */}
-        </MDBRow>
 
         <MDBRow>
           <MDBCol lg="4">
@@ -53,7 +28,7 @@ function Profile() {
                   style={{ width: '150px' }}
                   fluid />
                 <p className="text-muted mb-1">Full Stack Developer</p>
-                <p className="text-muted mb-4">Bay Area, San Francisco, CA</p>
+                <p className="text-muted mb-4">{this.state.user.username}</p>
                 <div className="d-flex justify-content-center mb-2">
                   <MDBBtn>Follow</MDBBtn>
                   <MDBBtn outline className="ms-1">Message</MDBBtn>

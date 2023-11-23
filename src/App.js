@@ -1,11 +1,10 @@
-import { Home, Library, Login,SignUp,BookInfo, Profile  } from "./components/pages";
+import { Home, Library, Login, SignUp, BookInfo, Profile } from "./components/pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import MediaPlayer from "./components/items/mediaPlayer";
 import { motion, AnimatePresence } from "framer-motion";
 import Header, { ComplexNavbar } from "./components/items/header";
 import Bookpage from './components/pages/bookpage';
-import PrimarySearchAppBar from "./components/items/header";
 
 
 
@@ -13,25 +12,24 @@ import PrimarySearchAppBar from "./components/items/header";
 
 
 function App() {
-  
 
 
 
   return (
     <Router>
-      <PrimarySearchAppBar />
+      <Header/>
     <div className="h-auto flex items-center justify-center min-w-[680px] bg-white">
       <div className="w-full h-full flex flex-col justify-center text-center  bg-white">
         
       <section>
           <Routes>
 
-            <Route path='/' element={<Home />} />
-            <Route path='/login' element={<Login/>} />
+            <Route path='/*' element={<Login />} />
+            <Route path='/home' element={<Home/>} />
+            <Route path='/library' element={<Library />} />
             <Route path='/signup' element={<SignUp />} />
-            <Route path='/library/:uid/:token' element={<Library />} />
             {/* <Route path='/bookinfo/:bookId' element={<BookInfo />} /> */}
-            <Route path="/books/:id" element={<Bookpage />} />
+            <Route path='/Bookpage/:bookId' element={<Bookpage />} />
             <Route path='/profile' element={<Profile />} />
 
 
@@ -40,8 +38,8 @@ function App() {
           </section>
       </div>
 
-      
-        {/* <motion.div
+
+          {/* <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 50 }}
@@ -51,9 +49,10 @@ function App() {
         </motion.div>
      */}
 
-      
-    </div>
-    </Router>
+
+        </div>
+      </Router>
+    </Provider>
   );
 }
 

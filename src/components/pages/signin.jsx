@@ -1,55 +1,36 @@
 import React, {useEffect, useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword  } from 'firebase/auth';
-
-import { TEInput, TERipple } from 'tw-elements-react'
-import { auth, provider } from '../../firebase'
+import {Link , Redirect} from 'react-router-dom'
+import {  TERipple } from 'tw-elements-react'
 import { logoSm } from '../../assets/img';
 import { Label, TextInput } from 'flowbite-react';
-
+import {login} from '../../actions/auth'
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
  
-const SignIn = () => {
+const SignIn = ({login}) => {
     const navigate = useNavigate();
-  const [email, setEmail] = useState('');
+  const [username, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isUser, setIsUser] = useState(false);
 
 
   const onLogin = (e) => {
     e.preventDefault();
-    signInWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-        // Signed in
-        window.localStorage.setItem("auth", true);
-        const user = userCredential.user;
-        navigate("/home")
-        console.log(user);
-    })
-    .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log(errorCode, errorMessage)
-    });
+    login(username,password);
    
 }
+useEffect(() => {
+  if (window.localStorage.getItem('access')) {
+    navigate('/home');
+  }
+}, []);
 
 
-  const loginWithGoogle = async () => {
-    try {
-      const userCred = await auth.signInWithPopup(provider);
-      if (userCred) {
-        window.localStorage.setItem("auth", true);
-        navigate("/home", { replace: true });
-      }
-    } catch (error) {
-      alert(error.message);
-    }
-  };
-
-  useEffect(() => {
-    if (window.localStorage.getItem("auth") === "true")
-      navigate("/home", { replace: true });
-  }, [navigate]);
+  // useEffect(() => {
+  //   if (window.localStorage.getItem("access"))
+  //     navigate("/home", { replace: true });
+  // }, [navigate]);
  
   return (
  
@@ -61,7 +42,7 @@ const SignIn = () => {
         <div className="mb-2 gap-2 text-start">
           <Label htmlFor="email1" value="Your email : " />
         </div>
-        <TextInput className='mb-3' name="email" type="email" placeholder="example@example.com"  onChange={(e)=>setEmail(e.target.value)} required />
+        <TextInput className='mb-3'value={username} name="username" type="username" placeholder="username...."  onChange={(e)=>setEmail(e.target.value)} required />
       </div>
 
       {/* <!--Password input--> */}
@@ -69,7 +50,7 @@ const SignIn = () => {
         <div className="mb-2 gap-3 text-start">
           <Label htmlFor="password1" value="Your password :" />
         </div>
-        <TextInput className='mb-4' name='password' type="password"  onChange={(e)=>setPassword(e.target.value)} required />
+        <TextInput className='mb-4'value={password} name='password' type="password"  onChange={(e)=>setPassword(e.target.value)} required />
       </div>
       </div>
       {/* <!-- Remember me checkbox --> */}
@@ -106,4 +87,4 @@ const SignIn = () => {
   )
 }
  
-export default SignIn
+export default connect(null,{login}) (SignIn); 

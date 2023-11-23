@@ -155,67 +155,48 @@ export default function PrimarySearchAppBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-       <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
-        <Toolbar>
-          <IconButton
-            size="large"
-            edge="start"
-            color="inherit"
-            aria-label="open drawer"
-            sx={{ mr: 2 }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
-            MUI
-          </Typography>
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
-          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            
-     
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
-          </Box>
-          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="show more"
-              aria-controls={mobileMenuId}
-              aria-haspopup="true"
-              onClick={handleMobileMenuOpen}
-              color="inherit"
-            >
-              <MoreIcon />
-            </IconButton>
-          </Box>
-        </Toolbar>
-      </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
-    </Box>
+    <Navbar fluid rounded className='bg-card sticky top-0 z-10 text-lg' >
+      <Navbar.Brand href="https://flowbite-react.com">
+        <img src={logoSm} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
+        <span className="self-center whitespace-nowrap text-xl font-semibold text-white dark:text-white">Flowbite React</span>
+      </Navbar.Brand>
+      <div className="flex md:order-1 pr-16 ">
+        <div className='pr-28'>
+        <SearchBar searchTerm={searchTerm} />
+
+        </div>
+        <Dropdown
+          arrowIcon={false}
+          
+          inline
+          label={
+            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
+          }
+        >
+          <Dropdown.Header>
+            <span className="block text-sm">Bonnie Green</span>
+            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
+          </Dropdown.Header>
+          <Dropdown.Item onClick={()=>{ navigate('/profile')}} Link to="/profile">Dashboard</Dropdown.Item>
+          <Dropdown.Item>Settings</Dropdown.Item>
+          <Dropdown.Item>Earnings</Dropdown.Item>
+          <Dropdown.Divider />
+          <Dropdown.Item onClick={()=>{ window.localStorage.clear();  navigate('/login')}}>Sign out</Dropdown.Item>
+        </Dropdown>
+        <Navbar.Toggle />
+      </div>
+      <Navbar.Collapse >
+        <Navbar.Link href="#" active  >
+          Home
+        </Navbar.Link>
+        <Navbar.Link href="#">About</Navbar.Link>
+        <Navbar.Link href="#">Services</Navbar.Link>
+        <Navbar.Link href="#">Pricing</Navbar.Link>
+        <Navbar.Link href="#">Contact</Navbar.Link>
+      </Navbar.Collapse>
+    </Navbar>
+
   );
 }
+
+export default Header;
