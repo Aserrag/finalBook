@@ -61,7 +61,7 @@ useEffect(() => {
 
       <div className="bg-white w-full  flex flex-col justify-center items-center ">
       
-      <BookTypesList onTypeSelect={handleTypeSelect}   />
+      {/* <BookTypesList onTypeSelect={handleTypeSelect}   /> */}
       <div className="w-2/4 rounded bg-card mt-4 mb-5 flex  cursor-pointer" >
       </div>
 
@@ -69,9 +69,9 @@ useEffect(() => {
       <BookList selectedType={selectedType} searchTerm={searchTerm} />
       </div>
 
-      <div className="w-[80%] flex justify-center mt-40">
+      {/* <div className="w-[80%] flex justify-center mt-40">
       <ColorInversionFooter />
-      </div>
+      </div> */}
 
       </div>
 

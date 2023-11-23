@@ -1,224 +1,84 @@
-.bookpage { 
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  padding: 10px 0;
-}
-.bookpage .navigations {
+.bookpage {
   display: flex;
-  flex-direction: column;
-  align-items: center ;
-  padding: 10px; 
-}
-.navigations .previous, .navigations .othericons div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 20px;
-}
-.previous {
-  background-color: #f2f5f8;
-  width: 100%;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 22px;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.previous:active {
-transform: scale(0.95)
-}
-.previous:hover {
-  background-color: var(--theme-color);
-}
-.previous:hover i {
-  color: #fff;
-}
-.heart , .bookmark , .chat{
-  background-color: #f2f5f8;
-  width: 100%;
-  border-radius: 5px;
-  padding: 5px 10px;
-  font-size: 22px;
-  transition: all 0.3s;
-  cursor: pointer;
-}
-.othericons i:hover {
-  background-color: #e0e0e0;
-  color: var(--theme-color)
-}
-.rightside .contimg{
-    background-color: rgb(240, 240, 240);
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-  }
-  .contimg .img  {
-   height: 400px;
-    display: flex;
-    
-    justify-content: center    
-  }
-  .contimg .img img {
-    filter: blur(8px);
-    -webkit-filter: blur(8px);
-    width: 100%;
-  }
-  .booktitle {
-    background-color: #fff;
-    width: 100%;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    border-radius: 0 0 10px 10px;
-  }
-  .booktitle h2 {
-    padding: 0;
-  }
- .content {
-   padding: 20px;
-   background-color: #fff;
-   margin-top: 10px;
-   border-radius: 10px;
- }
-.content h3{
-    margin: 10px 0;
-    color: #777777;
-}
-.bookpage h4 {
-  color: #777777;
-  padding: 5px 10px;
-}
-.content a:hover {
-  color: var(--theme-color);
-}
-.bookpage .awards {
-  max-width: 70vh;
-  overflow-x: scroll
-}
-
-.rightside .chat {
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
-  margin-top: 10px;
-  background-color: #fff;
-  position: relative
+  background-color: white;
+  border-radius: 26px;
+  color: black;
+  margin-top: 10%;
+
 }
-.chat h3 {
-  margin-bottom: 10px;
-  color: #777777
+
+.leftside {
+  flex: 1;
+  max-width: 300px;
+ 
 }
-.chat textarea {
-  resize: none;
+.content{
+  
+  margin-top: 20%;
+  font-size: 10px;
+}
+
+.rightside  {
+  flex: 1;
+  padding: 0 20px;
+  margin-top: 5%;
+  font-size: 22px;
+}
+.rightside h2 {
+color: black;
+font-weight: bold;
+}
+
+.contimg {
+  overflow: hidden;
+}
+
+.img img {
   width: 100%;
-  min-height: 70px;
-  border-radius: 5px;
-  border: solid 1px #ddd;
-  padding: 10px;
-  background-color: #f5f5f5;
-  transition: all 0.3s;
-  outline: none;
+  height: auto;
+  border-radius: 26px;
+
 }
 
+h2 {
+  color: #000;
+  margin: 10px 0;
+}
 
-.chat .textareaimg img, .comment .leftcomment img{
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+.buttons button {
+  padding-top:3%;
+  padding-bottom: 3%;
+  font-size: 18px;
+  font-weight: bold;
   margin-right: 10px;
-}
-.chat .textareaimg {
-  padding: 20px 10px
-}
-.comment {
-  position: relative;
-  border: solid 1px #eee;
-  border-radius: 10px;
-  margin-top: 10px;
-  padding: 20px 10px;
-}
-.comment textarea:disabled {
-  background-color: transparent;
-  border: solid 1px transparent;
-  height: 50px;
-}
-.comment textarea:disabled::-webkit-scrollbar {
-  width: 0;
-}
-.textareaimg div, .rightcomment {
-  width: 100%
-}
-.rightcomment .indivicomment .userinfo {
-  display: flex;
-  align-items: center
-}
-.rightcomment .indivicomment .userinfo  .dot {
-  width: 5px;
-  height: 5px;
-  background-color: #ddd;
-  border-radius: 50%;
-  margin: 0 5px;
-}
-.indivicomment .small {
-  font-size: 12px;
-}
-.textarea-btns .btns{
-  display: flex
-}
-.grayBtn{
-  border-radius: 5px;
-  background-color: rgb(242, 245, 248);
-  width: initial;
-  text-align: center;
-  padding: 7px 12px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
- .span{
-  margin-left: 10px;
+  margin-top: 10%;
+  width: 25%;
+  border-radius: 26px;
+  background-color: black;
+  color: white;
 }
 
-.comment .btns .grayBtn {
-  margin-right: 10px;
-}
-.comment .btns {
-  margin-top: 10px;
-}
-.comment {  
-  display: flex;
-} 
-.commentoptions {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-}
-.commentoptions .menu {
-  right: 0;
-  top: 25px;
-  width: 150px;
-}
-.commentoptions .menu .menulink{
-    padding: 5px 10px;
-    cursor: pointer;
-    align-items: center
-}
-.repliedcomment {
-  display: flex;
-  flex-direction: column-reverse
-}
-.colreverse {
-  flex-direction: column-reverse;
-  display: flex;
-}
-@media (max-width: 500px) {
-  .comment .rightcomment .btns span{
-    display: none
-  }
-  .comment .rightcomment .userinfo {
+.rate{
 
+  margin-top: 5%;
+}
+
+.comment{
+
+  margin-left: 30%;
+
+}
+
+@media screen and (max-width: 768px) {
+  .bookpage {
+    flex-direction: column;
   }
-  .comment .rightcomment .userinfo strong, .comment .rightcomment .userinfo small{
-    font-size: 12px;
+  
+  .rightside {
+    order: -1;
   }
 }

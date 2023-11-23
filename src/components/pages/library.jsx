@@ -9,8 +9,7 @@ const Library = () => {
   return (
     <>
       <div className="bg-bgBasic" >
-      <Header/>
-      <SearchBar/>
+          Active
       </div>
       <div className='bg-Hcolor'>
       

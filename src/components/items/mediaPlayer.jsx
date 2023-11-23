@@ -69,7 +69,7 @@ const MediaPlayer = ({ book }) => {
   }, [book]);
 
   return (
-    <div className="w-full full items-center gap-3 overflow-hidden">
+    <div className="w-1/2  items-center gap-3 overflow-hidden">
       <div className={`w-full full items-center gap-3 p-4 flex relative`}>
         <img
           src={poster}

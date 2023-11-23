@@ -1,208 +1,221 @@
-import React, { useState } from 'react';
-import { Logo, logoSm } from '../../assets/img';
-import { Avatar, Dropdown, Navbar } from 'flowbite-react';
-import SearchBar from './searchBar';
-import { Link, useNavigate } from "react-router-dom";
-import { TimeToLeave } from '@mui/icons-material';
+import * as React from 'react';
+import { styled, alpha } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import InputBase from '@mui/material/InputBase';
+import Badge from '@mui/material/Badge';
+import MenuItem from '@mui/material/MenuItem';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import MailIcon from '@mui/icons-material/Mail';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import MoreIcon from '@mui/icons-material/MoreVert';
 
-// const Header = () => {
-//   const [openNav, setOpenNav] = React.useState(false);
-//   const navigate = useNavigate();
-//   const [searchTerm, setSearchTerm] = useState('');
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: "transparent",
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 0,
+  width: '100%',
+  [theme.breakpoints.up('sm')]: {
+    marginLeft: theme.spacing(3),
+    width: 'auto',
+  },
+}));
 
+const SearchIconWrapper = styled('div')(({ theme }) => ({
+  padding: theme.spacing(0, 2),
+  height: '100%',
+  position: 'absolute',
+  pointerEvents: 'none',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+}));
 
-//     const  handleSearch = (term) => {
-//     setSearchTerm(term);
-//   };
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: 'inherit',
+  '& .MuiInputBase-input': {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: '20ch',
+    },
+  },
+}));
 
-//   React.useEffect(() => {
-//     window.addEventListener(
-//       "resize",
-//       () => window.innerWidth >= 960 && setOpenNav(false),
-//     );
-//   }, []);
-//   const navList = (
-//     <ul className="mt-2 mb-4 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6 text-white">
+export default function PrimarySearchAppBar() {
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <a href="#" className="flex items-center text-white">
-//           Pages
-//         </a>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <a href="#" className="flex items-center text-white">
-//           Account
-//         </a>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <a href="#" className="flex items-center text-white">
-//           Blocks
-//         </a>
-//       </Typography>
-//       <Typography
-//         as="li"
-//         variant="small"
-//         color="blue-gray"
-//         className="p-1 font-normal"
-//       >
-//         <a href="#" className="flex items-center text-white">
-//           Docs
-//         </a>
-//       </Typography>
-//     </ul>
-//   );
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  const handleProfileMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
-//   return (
-//     <Navbar className="sticky top-0 z-10 h-max max-w-full rounded-md px-4 py-2 lg:px-8 lg:py-4 bg-card">
-//     <div className="flex items-center justify-between relative text-white">
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
 
-//       <Typography
-//         onClick={()=> navigate("/home")}
-//         as="a"
-//         href="#"
-//         className="mr-4 cursor-pointer py-1.5 text-3xl flex flex-row items-center gap-4"
-//       >
-//         <div><img src={logoSm} className='flex flex-row w-14 h-12'></img></div>
-//         ITI-Books
-//       </Typography>
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
 
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
 
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <Menu
+      anchorEl={anchorEl}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      id={menuId}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isMenuOpen}
+      onClose={handleMenuClose}
+    >
+      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+    </Menu>
+  );
 
-//       <div className="flex items-center gap-4">
-//         <div className="mr-4 hidden lg:block">{navList}</div>
-//         <div className="flex items-center gap-x-1">
-//           <Button
-//             variant="text"
-//             size="sm"
-//             className="hidden lg:inline-block"
-//           >
-//             <span className='text-white'>Log In</span>
-//           </Button>
-//           <Button
-//             variant="gradient"
-//             size="sm"
-//             className="hidden lg:inline-block"
-//           >
-//             <span className='text-white'>Sign in</span>
-//           </Button>
-//         </div>
-//         <IconButton
-//           variant="text"
-//           className="ml-auto h-6 w-6 text-white hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
-//           ripple={false}
-//           onClick={() => setOpenNav(!openNav)}
-//         >
-//           {openNav ? (
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               fill="none"
-//               className="h-6 w-6"
-//               viewBox="0 0 24 24"
-//               stroke="currentColor"
-//               strokeWidth={2}
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 d="M6 18L18 6M6 6l12 12"
-//               />
-//             </svg>
-//           ) : (
-//             <svg
-//               xmlns="http://www.w3.org/2000/svg"
-//               className="h-6 w-6"
-//               fill="none"
-//               stroke="currentColor"
-//               strokeWidth={2}
-//             >
-//               <path
-//                 strokeLinecap="round"
-//                 strokeLinejoin="round"
-//                 d="M4 6h16M4 12h16M4 18h16"
-//               />
-//             </svg>
-//           )}
-//         </IconButton>
-//       </div>
-//     </div>
-//     <MobileNav open={openNav}>
-//       {navList}
-//       <div className="flex items-center gap-x-1">
-//         <Button fullWidth variant="text" size="sm" className=" bg-white">
-//           <span>Log In</span>
-//         </Button>
-//         <Button fullWidth variant="gradient" size="sm" className="">
-//           <span>Sign in</span>
-//         </Button>
-//       </div>
-//     </MobileNav>
-//   </Navbar>
-//   );
-// }
-
-const Header = ({searchTerm}) => {
-  const navigate = useNavigate();
-
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{
+        vertical: 'top',
+        horizontal: 'right',
+      }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+      <MenuItem>
+        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+          <Badge badgeContent={4} color="error">
+            <MailIcon />
+          </Badge>
+        </IconButton>
+        <p>Messages</p>
+      </MenuItem>
+      <MenuItem>
+        <IconButton
+          size="large"
+          aria-label="show 17 new notifications"
+          color="inherit"
+        >
+          <Badge badgeContent={17} color="error">
+            <NotificationsIcon />
+          </Badge>
+        </IconButton>
+        <p>Notifications</p>
+      </MenuItem>
+      <MenuItem onClick={handleProfileMenuOpen}>
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="primary-search-account-menu"
+          aria-haspopup="true"
+          color="inherit"
+        >
+          <AccountCircle />
+        </IconButton>
+        <p>Profile</p>
+      </MenuItem>
+    </Menu>
+  );
 
   return (
-    <Navbar fluid rounded className='bg-card sticky top-0 z-10 text-lg' >
-      <Navbar.Brand href="https://flowbite-react.com">
-        <img src={logoSm} className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" />
-        <span className="self-center whitespace-nowrap text-xl font-semibold text-white dark:text-white">Flowbite React</span>
-      </Navbar.Brand>
-      <div className="flex md:order-1 pr-16 ">
-        <div className='pr-28'>
-        <SearchBar searchTerm={searchTerm} />
-
-        </div>
-        <Dropdown
-          arrowIcon={false}
-          
-          inline
-          label={
-            <Avatar alt="User settings" img="https://flowbite.com/docs/images/people/profile-picture-5.jpg" rounded />
-          }
-        >
-          <Dropdown.Header>
-            <span className="block text-sm">Bonnie Green</span>
-            <span className="block truncate text-sm font-medium">name@flowbite.com</span>
-          </Dropdown.Header>
-          <Dropdown.Item onClick={()=>{ navigate('/profile')}} Link to="/profile">Dashboard</Dropdown.Item>
-          <Dropdown.Item>Settings</Dropdown.Item>
-          <Dropdown.Item>Earnings</Dropdown.Item>
-          <Dropdown.Divider />
-          <Dropdown.Item onClick={()=>{ window.localStorage.clear();  navigate('/login')}}>Sign out</Dropdown.Item>
-        </Dropdown>
-        <Navbar.Toggle />
-      </div>
-      <Navbar.Collapse >
-        <Navbar.Link href="#" active  >
-          Home
-        </Navbar.Link>
-        <Navbar.Link href="#">About</Navbar.Link>
-        <Navbar.Link href="#">Services</Navbar.Link>
-        <Navbar.Link href="#">Pricing</Navbar.Link>
-        <Navbar.Link href="#">Contact</Navbar.Link>
-      </Navbar.Collapse>
-    </Navbar>
-
+    <Box sx={{ flexGrow: 1 }}>
+       <AppBar position="static" sx={{ backgroundColor: 'white', color: 'black' }}>
+        <Toolbar>
+          <IconButton
+            size="large"
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            sx={{ mr: 2 }}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            variant="h6"
+            noWrap
+            component="div"
+            sx={{ display: { xs: 'none', sm: 'block' } }}
+          >
+            MUI
+          </Typography>
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </Search>
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            
+     
+            <IconButton
+              size="large"
+              edge="end"
+              aria-label="account of current user"
+              aria-controls={menuId}
+              aria-haspopup="true"
+              onClick={handleProfileMenuOpen}
+              color="inherit"
+            >
+              <AccountCircle />
+            </IconButton>
+          </Box>
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size="large"
+              aria-label="show more"
+              aria-controls={mobileMenuId}
+              aria-haspopup="true"
+              onClick={handleMobileMenuOpen}
+              color="inherit"
+            >
+              <MoreIcon />
+            </IconButton>
+          </Box>
+        </Toolbar>
+      </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
+    </Box>
   );
 }
-
-export default Header;
